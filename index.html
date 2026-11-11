@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Сайты и Telegram-боты в Гомеле</title>
+<title>Сайты и Telegram-боты для бизнеса в Беларуси</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Oswald:wght@500;600&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
@@ -443,39 +443,363 @@ footer { padding: 40px 0 60px; color: var(--muted); font-size: 14px; text-align:
 }
 .x-prev.off *, .x-prev.off { animation-play-state: paused !important; }
 
-.x-svc { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
-.x-sv { padding: 22px 20px; border: 1px solid var(--line); border-radius: 20px; background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); transition: border-color .25s, transform .25s; }
-.x-sv:hover { border-color: rgba(56,225,195,.5); transform: translateY(-4px); }
-.x-sv i { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 14px; font-style: normal; font-size: 22px; margin-bottom: 14px; background: linear-gradient(135deg, rgba(255,107,61,.25), rgba(56,225,195,.2)); }
-.x-sv b { display: block; font-size: 17px; margin-bottom: 6px; }
-.x-sv span { display: block; color: var(--muted); font-size: 14.5px; line-height: 1.5; }
-.x-sv em { display: block; margin-top: 12px; font-style: normal; font-size: 13px; color: var(--amber); }
-.x-any { margin-top: 18px; padding: 20px 24px; border: 1px dashed rgba(255,178,61,.5); border-radius: 18px; color: var(--muted); font-size: 15.5px; }
-.x-any b { color: var(--text, #fff); }
 .x-more { margin-top: 18px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 24px; }
 .x-more div { display: flex; justify-content: space-between; gap: 12px; padding: 12px 16px; border: 1px solid var(--line); border-radius: 14px; font-size: 15px; background: var(--glass); }
 .x-more div b { color: var(--amber); white-space: nowrap; font-weight: 600; }
-@media (max-width: 980px) { .x-svc { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 640px) { .x-svc, .x-more { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .x-more { grid-template-columns: 1fr; } }
 html, body { overflow-x: clip; }
+
+.x-pain { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 30px; }
+.x-pn { padding: 24px 22px; border-radius: 20px; border: 1px solid rgba(255,107,61,.28); background: linear-gradient(180deg, rgba(255,107,61,.10), rgba(255,107,61,.02)); }
+.x-pn b { display: block; font-size: 18px; margin-bottom: 8px; line-height: 1.3; }
+.x-pn span { color: var(--muted); font-size: 15px; line-height: 1.55; }
+.x-fix { margin-top: 18px; padding: 22px 26px; border-radius: 20px; border: 1px solid rgba(56,225,195,.4); background: linear-gradient(90deg, rgba(56,225,195,.12), rgba(56,225,195,.02)); font-size: 17px; line-height: 1.55; }
+.x-fix b { color: var(--aqua); }
+.x-big { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 32px; align-items: stretch; }
+.x-bc { position: relative; display: flex; flex-direction: column; padding: 30px 26px 26px; border-radius: 26px; border: 1px solid var(--line); background: linear-gradient(165deg, rgba(255,255,255,.09), rgba(255,255,255,.02)); overflow: hidden; }
+.x-bc::before { content: ""; position: absolute; width: 260px; height: 260px; right: -90px; top: -110px; border-radius: 50%; background: radial-gradient(circle, rgba(255,178,61,.35), transparent 65%); pointer-events: none; }
+.x-bc.bot::before { background: radial-gradient(circle, rgba(56,225,195,.32), transparent 65%); }
+.x-bc.hit { border-color: rgba(255,178,61,.6); box-shadow: 0 40px 80px -40px rgba(255,107,61,.6); background: linear-gradient(165deg, rgba(255,107,61,.20), rgba(255,178,61,.05)); }
+.x-bc .tag { align-self: flex-start; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; padding: 5px 11px; border-radius: 99px; background: rgba(255,255,255,.1); color: var(--muted); margin-bottom: 18px; }
+.x-bc.hit .tag { background: linear-gradient(90deg, var(--coral), var(--amber)); color: #1a0f05; font-weight: 700; }
+.x-bc h3 { font-family: var(--display); font-weight: 500; font-size: 24px; line-height: 1.2; margin: 0 0 10px; letter-spacing: -.01em; }
+.x-bc p { color: var(--muted); font-size: 15.5px; line-height: 1.55; margin: 0 0 16px; }
+.x-bc ul { list-style: none; padding: 0; margin: 0 0 22px; display: grid; gap: 9px; }
+.x-bc li { position: relative; padding-left: 26px; font-size: 15px; }
+.x-bc li::before { content: "✓"; position: absolute; left: 0; top: 0; width: 18px; height: 18px; border-radius: 50%; display: grid; place-items: center; font-size: 11px; font-weight: 700; background: rgba(56,225,195,.2); color: var(--aqua); }
+.x-bc .foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 18px; border-top: 1px solid var(--line); }
+.x-bc .foot b { font-family: var(--display); font-size: 26px; font-weight: 600; }
+.x-bc .foot b small { font-size: 13px; color: var(--muted); font-weight: 400; margin-right: 4px; }
+.x-pills { margin-top: 26px; }
+.x-pills h4 { margin: 0 0 14px; font-size: 15px; font-weight: 500; color: var(--muted); }
+.x-pl { display: flex; flex-wrap: wrap; gap: 10px; }
+.x-pl a { display: inline-flex; align-items: center; gap: 10px; padding: 11px 16px; border-radius: 99px; border: 1px solid var(--line); background: var(--glass); color: inherit; text-decoration: none; font-size: 14.5px; transition: border-color .2s, transform .2s; }
+.x-pl a:hover { border-color: var(--amber); transform: translateY(-2px); }
+.x-pl a em { font-style: normal; color: var(--amber); font-size: 13px; }
+.x-why { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 30px; }
+.x-wy { padding: 26px 22px; border-radius: 22px; border: 1px solid var(--line); background: var(--glass); text-align: left; }
+.x-wy strong { display: block; font-family: var(--display); font-weight: 600; font-size: 34px; line-height: 1; margin-bottom: 10px; background: linear-gradient(90deg, var(--coral), var(--amber)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.x-wy b { display: block; font-size: 16px; margin-bottom: 6px; }
+.x-wy span { color: var(--muted); font-size: 14.5px; line-height: 1.5; }
+.x-sticky { display: none; }
+@media (max-width: 980px) { .x-big, .x-pain { grid-template-columns: 1fr; } .x-why { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) {
+  .x-why { grid-template-columns: 1fr; }
+  .x-sticky { display: block; position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 40; }
+  .x-sticky .x-btn { width: 100%; justify-content: center; box-shadow: 0 14px 40px rgba(0,0,0,.55); }
+  footer { padding-bottom: 90px; }
+}
+.x-any { margin-top: 28px; }
+.x-nav .x-btn { white-space: nowrap; }
+@media (max-width: 640px) { .x-brand { font-size: 13px; } .x-nav .x-btn.small { padding: 9px 12px; font-size: 13px; } }
+/* ===== showcase demos ===== */
+.sxw { position: relative; overflow: hidden; border-radius: 16px; background: #000; }
+.sx-fit { width: 900px; height: 620px; transform-origin: top left; }
+.x-prev.show { display: block; }
+.x-prev.show .sxw { border-radius: 0; pointer-events: none; }
+.x-ovbody .sxw { max-width: 1180px; margin: 0 auto; border: 1px solid var(--line); box-shadow: 0 40px 100px -30px rgba(0,0,0,.8); }
+.sx { width: 900px; height: 620px; position: relative; overflow: hidden; font-family: 'Onest', system-ui, sans-serif; color: #151515; font-size: 15px; line-height: 1.4; }
+.sx *, .sx *::before, .sx *::after { box-sizing: border-box; }
+.sx button { font: inherit; cursor: pointer; border: 0; }
+.sx h3, .sx h4, .sx p { margin: 0; }
+.sx .toast { position: absolute; left: 50%; bottom: 22px; transform: translate(-50%, 30px); opacity: 0; padding: 11px 20px; border-radius: 30px; background: #151515; color: #fff; font-size: 14px; transition: .35s; z-index: 9; white-space: nowrap; }
+.sx .toast.on { transform: translate(-50%, 0); opacity: 1; }
+
+/* shop */
+.sx.shop { background: #f6f1ea; padding: 22px 34px; }
+.shop header { display: flex; align-items: center; gap: 22px; }
+.shop .lg { font-family: 'Playfair Display', serif; font-size: 26px; color: #2f5d50; }
+.shop .lg i { color: #c98c5e; font-style: italic; padding: 0 2px; }
+.shop .sr { flex: 1; padding: 11px 18px; border-radius: 30px; background: #fff; color: #9a9a9a; border: 1px solid #e6ddd0; }
+.shop .cart { padding: 11px 18px; border-radius: 30px; background: #2f5d50; color: #fff; font-weight: 600; }
+.shop .cart em { display: inline-grid; place-items: center; min-width: 22px; height: 22px; margin-left: 8px; border-radius: 11px; background: #f2c78d; color: #2a2118; font-style: normal; font-size: 13px; transition: transform .3s; }
+.shop .cart em.pop { transform: scale(1.5); }
+.shop .hero-s { display: flex; justify-content: space-between; align-items: center; margin: 14px 0 12px; padding: 16px 34px; border-radius: 24px; background: linear-gradient(120deg, #e2eadf, #f3e3d0); overflow: hidden; position: relative; }
+.shop .hero-s small { color: #2f5d50; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; font-size: 12px; }
+.shop .hero-s h3 { font-family: 'Playfair Display', serif; font-size: 34px; line-height: 1.1; margin: 8px 0 16px; color: #1d2b26; }
+.shop .hero-s button { padding: 12px 22px; border-radius: 30px; background: #1d2b26; color: #fff; }
+.shop .hero-s .blob { position: absolute; right: 40px; top: -30px; width: 230px; height: 230px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, #fff8, #c98c5e66); animation: shFloat 6s ease-in-out infinite; }
+.shop .hero-s .v1 { position: absolute; right: 110px; bottom: 0; width: 70px; height: 120px; border-radius: 40% 40% 14% 14%; background: linear-gradient(160deg, #d9b08c, #b9825c); box-shadow: 0 20px 30px -10px #0004; animation: shFloat 5s ease-in-out infinite; }
+.shop .hero-s .v2 { position: absolute; right: 200px; bottom: 0; width: 52px; height: 86px; border-radius: 45% 45% 14% 14%; background: linear-gradient(160deg, #a8c0b3, #6f9686); animation: shFloat 7s ease-in-out infinite reverse; }
+@keyframes shFloat { 50% { transform: translateY(-12px); } }
+.shop .chips { display: flex; gap: 10px; margin-bottom: 12px; }
+.shop .chips span { padding: 8px 16px; border-radius: 30px; background: #fff; border: 1px solid #e6ddd0; cursor: pointer; transition: .2s; }
+.shop .chips span.on { background: #2f5d50; color: #fff; border-color: #2f5d50; }
+.shop .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.shop .card { display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 18px; background: #fff; border: 1px solid #eee5d8; transition: .25s; }
+.shop .card.hide { display: none; }
+.shop .card:hover { transform: translateY(-4px); box-shadow: 0 16px 30px -16px #0003; }
+.shop .art { position: relative; flex: 0 0 74px; height: 74px; border-radius: 14px; display: grid; place-items: center; }
+.shop .art i { display: block; background: var(--g); box-shadow: 0 8px 12px -6px #0005; }
+.shop .art i.v { width: 30px; height: 50px; border-radius: 40% 40% 14% 14%; }
+.shop .art i.c { width: 20px; height: 46px; border-radius: 4px; position: relative; }
+.shop .art i.c::before { content: ""; position: absolute; left: 50%; top: -12px; width: 8px; height: 12px; margin-left: -4px; border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%; background: #f2b84b; animation: shFlame 1s ease-in-out infinite alternate; }
+.shop .art i.p { width: 50px; height: 40px; border-radius: 10px; transform: rotate(-8deg); }
+@keyframes shFlame { to { transform: scale(1.2, .85); } }
+.shop .card b { display: block; font-size: 14px; }
+.shop .card .pr { color: #2f5d50; font-weight: 700; margin: 2px 0 6px; }
+.shop .add { padding: 6px 12px; border-radius: 20px; background: #f2e6d4; color: #2a2118; font-size: 13px; }
+.shop .add:hover { background: #2f5d50; color: #fff; }
+
+/* qr menu */
+.sx.qrm { background: linear-gradient(120deg, #1f2a26 0 46%, #e9dfcf 46%); display: flex; align-items: center; padding: 0 60px; gap: 60px; }
+.qrm .left { width: 330px; color: #f3ead8; }
+.qrm .left small { color: #e0a96d; letter-spacing: .1em; text-transform: uppercase; font-size: 12px; }
+.qrm .left h3 { font-family: 'Playfair Display', serif; font-size: 34px; line-height: 1.12; margin: 8px 0 12px; }
+.qrm .left p { color: #b9c4bd; margin-bottom: 20px; }
+.qrm .qr { width: 150px; padding: 12px; border-radius: 16px; background: #fff; position: relative; }
+.qrm .qr svg { display: block; width: 100%; }
+.qrm .qr::after { content: ""; position: absolute; left: 12px; right: 12px; height: 3px; top: 12px; background: #e0a96d; box-shadow: 0 0 14px #e0a96d; animation: qrScan 2.4s ease-in-out infinite; }
+@keyframes qrScan { 0%, 100% { top: 12px; } 50% { top: calc(100% - 15px); } }
+.qrm .phone { width: 290px; height: 540px; margin-left: auto; border-radius: 40px; background: #111; padding: 10px; box-shadow: 0 40px 60px -20px #0007; transform: rotate(2deg); }
+.qrm .scr { height: 100%; border-radius: 31px; background: #fffaf2; overflow: hidden; display: flex; flex-direction: column; }
+.qrm .top { padding: 22px 18px 10px; }
+.qrm .top b { font-family: 'Playfair Display', serif; font-size: 22px; color: #2a2118; }
+.qrm .top span { display: block; font-size: 12px; color: #8a7d6b; }
+.qrm .tabs { display: flex; gap: 8px; padding: 6px 18px 12px; }
+.qrm .tabs button { padding: 7px 13px; border-radius: 20px; background: #efe5d3; color: #2a2118; font-size: 13px; }
+.qrm .tabs button.on { background: #2a2118; color: #fff; }
+.qrm .list { flex: 1; overflow: hidden; padding: 0 18px; }
+.qrm .it { display: flex; align-items: center; gap: 10px; padding: 11px 0; border-bottom: 1px solid #efe5d3; animation: qrIn .4s both; }
+.qrm .it .dot { flex: 0 0 38px; height: 38px; border-radius: 12px; background: var(--c); }
+.qrm .it div { flex: 1; font-size: 14px; }
+.qrm .it div small { display: block; color: #8a7d6b; font-size: 12px; }
+.qrm .it .pl { width: 30px; height: 30px; border-radius: 50%; background: #2a2118; color: #fff; font-size: 18px; line-height: 1; }
+@keyframes qrIn { from { opacity: 0; transform: translateY(8px); } }
+.qrm .bar { margin: 10px 14px 16px; padding: 13px 16px; border-radius: 16px; background: #2f5d50; color: #fff; display: flex; justify-content: space-between; font-weight: 600; font-size: 14px; }
+
+/* calc */
+.sx.calc { align-items: center; background: radial-gradient(500px 300px at 85% 10%, #28508a55, transparent), #0e1626; color: #eaf0fb; display: grid; grid-template-columns: 1.1fr .9fr; gap: 30px; padding: 40px 44px; }
+.calc h3 { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 30px; line-height: 1.1; }
+.calc .sub { color: #8fa3c4; margin: 8px 0 22px; }
+.calc .lab { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: #8fa3c4; margin: 18px 0 8px; }
+.calc .opts { display: flex; gap: 8px; flex-wrap: wrap; }
+.calc .opts button { padding: 10px 16px; border-radius: 12px; background: #17233a; color: #c7d4ec; border: 1px solid #25365a; transition: .2s; }
+.calc .opts button.on { background: #3b82f6; color: #fff; border-color: #3b82f6; box-shadow: 0 8px 20px -8px #3b82f6; }
+.calc input[type=range] { width: 100%; accent-color: #3b82f6; }
+.calc .area { font-size: 26px; font-weight: 800; }
+.calc .res { align-self: center; padding: 30px 28px; border-radius: 26px; background: linear-gradient(160deg, #1b2b4a, #12203a); border: 1px solid #2c4170; text-align: center; }
+.calc .res small { color: #8fa3c4; }
+.calc .res .sum { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 42px; line-height: 1.1; margin: 10px 0 4px; color: #fff; }
+.calc .res .sum span { font-size: 18px; color: #8fa3c4; font-weight: 600; }
+.calc .res ul { list-style: none; padding: 0; margin: 16px 0 20px; text-align: left; display: grid; gap: 8px; color: #c7d4ec; font-size: 14px; }
+.calc .res li::before { content: "✓ "; color: #4ade80; }
+.calc .cta { width: 100%; padding: 14px; border-radius: 14px; background: linear-gradient(90deg, #3b82f6, #6366f1); color: #fff; font-weight: 700; }
+.calc .sent { display: none; margin-top: 14px; padding: 12px; border-radius: 14px; background: #10301f; color: #86efac; font-size: 14px; text-align: left; }
+.calc .sent.on { display: block; animation: qrIn .4s; }
+
+/* automation */
+.sx.auto2 { background: #0b1118; color: #e6edf6; padding: 34px 40px; }
+.auto2 h3 { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 28px; }
+.auto2 .sub { color: #8aa0b8; margin: 6px 0 24px; }
+.auto2 .flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; position: relative; margin-bottom: 26px; }
+.auto2 .nd { position: relative; padding: 18px 14px; border-radius: 18px; background: #131c27; border: 1px solid #243246; text-align: center; font-size: 14px; }
+.auto2 .nd i { display: block; font-style: normal; font-size: 28px; margin-bottom: 6px; }
+.auto2 .nd.hot { border-color: #38e1c3; box-shadow: 0 0 0 4px #38e1c322; }
+.auto2 .nd:not(:last-child)::after { content: ""; position: absolute; left: 100%; top: 50%; width: 40px; height: 2px; background: linear-gradient(90deg, #38e1c3, #243246); }
+.auto2 .pkt { position: absolute; top: 50%; left: 0; width: 12px; height: 12px; margin-top: -6px; border-radius: 50%; background: #ffb23d; box-shadow: 0 0 16px #ffb23d; }
+.auto2 .sheet { border-radius: 16px; overflow: hidden; border: 1px solid #243246; background: #0f1721; }
+.auto2 .sh-h, .auto2 .sh-r { display: grid; grid-template-columns: 50px 1.2fr 1.3fr 1fr 1fr; padding: 10px 16px; font-size: 13.5px; gap: 10px; }
+.auto2 .sh-h { background: #172231; color: #8aa0b8; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+.auto2 .sh-r { border-top: 1px solid #1c2837; animation: qrIn .5s both; }
+.auto2 .sh-r.new { background: #38e1c312; }
+.auto2 .st { color: #38e1c3; }
+.auto2 .tgn { position: absolute; right: 36px; top: 28px; padding: 12px 16px; border-radius: 14px; background: #1a2a3a; border: 1px solid #2a4560; font-size: 13px; transform: translateX(30px); opacity: 0; transition: .5s; max-width: 250px; }
+.auto2 .tgn.on { transform: none; opacity: 1; }
+.auto2 .tgn b { display: block; color: #38e1c3; }
+
+/* crm */
+.sx.crm { background: #f4f6fa; padding: 26px 32px; color: #1c2330; }
+.crm .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+.crm .top h3 { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 24px; }
+.crm .kpi { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 18px; }
+.crm .k { padding: 16px 18px; border-radius: 16px; background: #fff; border: 1px solid #e3e8f1; }
+.crm .k small { color: #6c7a90; }
+.crm .k b { display: block; font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 28px; }
+.crm .filters { display: flex; gap: 8px; margin-bottom: 12px; }
+.crm .filters button { padding: 7px 14px; border-radius: 20px; background: #fff; border: 1px solid #dde3ee; color: #44526b; font-size: 13px; }
+.crm .filters button.on { background: #1c2330; color: #fff; border-color: #1c2330; }
+.crm .tbl { border-radius: 16px; overflow: hidden; background: #fff; border: 1px solid #e3e8f1; }
+.crm .tr { display: grid; grid-template-columns: 1.4fr 1.4fr 1fr .9fr 1fr; padding: 11px 18px; gap: 10px; font-size: 14px; border-top: 1px solid #eef1f6; align-items: center; }
+.crm .tr.th { background: #f0f3f9; color: #6c7a90; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; border: 0; }
+.crm .tr.hide { display: none; }
+.crm .chip { justify-self: start; padding: 3px 10px; border-radius: 20px; font-size: 12.5px; font-weight: 600; }
+.crm .chip.n { background: #dbeafe; color: #1d4ed8; }
+.crm .chip.w { background: #fef3c7; color: #b45309; }
+.crm .chip.d { background: #dcfce7; color: #15803d; }
+
+/* brand */
+.sx.brand { background: #f1ede6; padding: 28px 34px; transition: background .5s; }
+.brand .tabs { display: flex; gap: 8px; margin-bottom: 18px; }
+.brand .tabs button { padding: 8px 16px; border-radius: 30px; background: #fff8; color: #333; border: 1px solid #0002; }
+.brand .tabs button.on { background: #111; color: #fff; }
+.brand .board { display: grid; grid-template-columns: 1.15fr .85fr; grid-template-rows: 1fr 1fr; gap: 16px; height: 510px; }
+.brand .cell { border-radius: 22px; padding: 22px; position: relative; overflow: hidden; }
+.brand .main { grid-row: span 2; background: var(--bg); color: var(--fg); display: grid; place-items: center; text-align: center; transition: .5s; }
+.brand .mark { width: 120px; height: 120px; margin: 0 auto 18px; border-radius: 32%; display: grid; place-items: center; background: var(--ac); color: var(--bg); font-family: var(--ff); font-size: 66px; font-weight: 700; transition: .5s; animation: brPop .8s both; }
+@keyframes brPop { from { transform: scale(.4) rotate(-20deg); opacity: 0; } }
+.brand .nm { font-family: var(--ff); font-size: 44px; letter-spacing: .02em; }
+.brand .tg2 { color: var(--fg); opacity: .6; margin-top: 4px; }
+.brand .pal { background: #fff; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; align-content: center; }
+.brand .pal i { display: block; height: 80px; border-radius: 14px; background: var(--c); position: relative; font-style: normal; font-size: 11px; color: #fff9; padding: 8px; }
+.brand .card2 { background: #fff; display: flex; align-items: center; justify-content: center; }
+.brand .bc { width: 250px; height: 140px; border-radius: 12px; background: var(--bg); color: var(--fg); padding: 16px; box-shadow: 0 20px 30px -14px #0006; transform: rotate(-4deg); transition: .5s; font-family: var(--ff); display: flex; flex-direction: column; justify-content: space-between; }
+.brand .bc b { font-size: 20px; }
+.brand .bc small { font-family: 'Onest', sans-serif; opacity: .8; line-height: 1.5; }
+
+/* social */
+.sx.social { background: #0e0f14; color: #fff; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 28px 32px; }
+.social .ig { border-radius: 22px; background: #fff; color: #151515; padding: 18px; }
+.social .prof { display: flex; align-items: center; gap: 16px; }
+.social .av { width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, #ff6b3d, #ffb23d); display: grid; place-items: center; color: #fff; font-family: 'Playfair Display', serif; font-size: 34px; border: 3px solid #fff; outline: 2px solid #ff6b3d; }
+.social .prof b { display: block; font-size: 17px; }
+.social .prof small { color: #777; }
+.social .stats { display: flex; gap: 20px; margin: 12px 0 12px; font-size: 13px; }
+.social .hl { display: flex; gap: 12px; margin-bottom: 12px; }
+.social .hl i { width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; font-style: normal; background: #f6efe6; border: 2px solid #ffb23d; font-size: 20px; }
+.social .gr { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+.social .gr div { aspect-ratio: 1; display: grid; place-items: center; text-align: center; padding: 8px; font-size: 13px; font-weight: 700; color: var(--t, #fff); background: var(--b); animation: qrIn .5s both; transition: transform .3s; }
+.social .gr div:hover { transform: scale(1.05); z-index: 2; }
+.social .tgc { border-radius: 22px; background: #17212b; padding: 18px; display: flex; flex-direction: column; gap: 12px; }
+.social .tgh { display: flex; align-items: center; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid #ffffff14; }
+.social .tgh .av { width: 46px; height: 46px; font-size: 22px; border: 0; outline: 0; }
+.social .pin { padding: 10px 14px; border-radius: 12px; background: #202e3c; font-size: 13px; border-left: 3px solid #ffb23d; }
+.social .post { border-radius: 16px; background: #1f2c3a; overflow: hidden; font-size: 13.5px; }
+.social .post .im { height: 110px; background: linear-gradient(135deg, #ff6b3d, #ffb23d); display: grid; place-items: center; font-family: 'Playfair Display', serif; font-size: 22px; }
+.social .post p { padding: 12px 14px; color: #cfd9e4; }
+
+/* print */
+.sx.print { background: radial-gradient(600px 400px at 50% 0, #2b2f3a, #14161c); color: #fff; padding: 26px 34px; }
+.print h3 { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 24px; }
+.print .sub { color: #9aa4b5; margin: 4px 0 14px; }
+.print .stage { display: flex; gap: 40px; justify-content: center; align-items: center; height: 470px; perspective: 1400px; }
+.print .flip { width: 360px; height: 210px; position: relative; transform-style: preserve-3d; transition: transform .8s cubic-bezier(.2,.8,.2,1); cursor: pointer; }
+.print .flip.on { transform: rotateY(180deg); }
+.print .flip > div { position: absolute; inset: 0; border-radius: 14px; backface-visibility: hidden; padding: 22px; box-shadow: 0 30px 50px -20px #000a; }
+.print .fr { background: linear-gradient(135deg, #ff6b3d, #ffb23d); color: #1a0f05; display: flex; flex-direction: column; justify-content: space-between; }
+.print .fr b { font-family: 'Playfair Display', serif; font-size: 34px; }
+.print .bk { background: #fffaf2; color: #151515; transform: rotateY(180deg); display: flex; flex-direction: column; justify-content: center; gap: 4px; }
+.print .bk b { font-size: 20px; }
+.print .bk small { color: #555; font-size: 13.5px; line-height: 1.7; }
+.print .fly { width: 250px; height: 354px; border-radius: 10px; background: #fff; color: #151515; padding: 22px; transform: rotate(4deg) rotateX(8deg); box-shadow: 0 30px 50px -20px #000a; display: flex; flex-direction: column; animation: shFloat 6s ease-in-out infinite; }
+.print .fly .hd { height: 120px; margin: -22px -22px 16px; border-radius: 10px 10px 0 0; background: linear-gradient(135deg, #ff6b3d, #ffb23d); display: grid; place-items: center; font-family: 'Playfair Display', serif; font-size: 30px; color: #1a0f05; }
+.print .fly b { font-size: 18px; }
+.print .fly ul { list-style: none; padding: 0; margin: 10px 0; display: grid; gap: 7px; font-size: 13.5px; }
+.print .fly li { display: flex; justify-content: space-between; border-bottom: 1px dotted #bbb; }
+.print .fly .qrs { margin-top: auto; font-size: 12px; color: #666; }
+.print .hint { text-align: center; color: #9aa4b5; font-size: 13px; }
+
+/* slides */
+.sx.deck { background: #0c0f16; display: grid; place-items: center; }
+.deck .sl { width: 760px; height: 428px; border-radius: 18px; position: relative; overflow: hidden; box-shadow: 0 40px 80px -30px #000; }
+.deck .s { position: absolute; inset: 0; padding: 44px 52px; display: none; flex-direction: column; justify-content: center; color: #fff; background: linear-gradient(135deg, #14213d, #0e1626); }
+.deck .s.on { display: flex; animation: dkIn .6s both; }
+@keyframes dkIn { from { opacity: 0; transform: translateX(30px); } }
+.deck .s small { color: #ffb23d; letter-spacing: .12em; text-transform: uppercase; font-size: 12px; }
+.deck .s h3 { font-family: 'Unbounded', sans-serif; font-weight: 500; font-size: 36px; line-height: 1.15; margin: 10px 0; }
+.deck .s p { color: #b9c4d8; font-size: 17px; max-width: 520px; }
+.deck .s.t1 { background: radial-gradient(400px 300px at 90% 10%, #ff6b3d66, transparent), #0e1626; }
+.deck .cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 22px; }
+.deck .cols div { padding: 16px; border-radius: 14px; background: #ffffff12; border: 1px solid #ffffff1a; font-size: 14px; }
+.deck .cols b { display: block; font-size: 26px; color: #38e1c3; font-family: 'Unbounded', sans-serif; font-weight: 500; }
+.deck .bars { display: flex; align-items: flex-end; gap: 14px; height: 150px; margin-top: 20px; }
+.deck .bars i { flex: 1; border-radius: 8px 8px 0 0; background: linear-gradient(180deg, #ffb23d, #ff6b3d); height: var(--h); transform-origin: bottom; animation: dkBar 1s both; }
+@keyframes dkBar { from { transform: scaleY(0); } }
+.deck .nav { position: absolute; left: 0; right: 0; bottom: 22px; display: flex; justify-content: center; gap: 12px; align-items: center; color: #fff; }
+.deck .nav button { width: 38px; height: 38px; border-radius: 50%; background: #ffffff1c; color: #fff; font-size: 16px; }
+.deck .nav span { font-size: 13px; opacity: .7; min-width: 50px; text-align: center; }
+.sx.deck .sl { margin-top: -30px; }
+
+/* before/after */
+.sx.ba { background: #11141b; color: #fff; padding: 24px 30px; }
+.ba .cmp { position: relative; height: 430px; border-radius: 16px; overflow: hidden; user-select: none; }
+.ba .pane { position: absolute; inset: 0; }
+.ba .old { background: #fff; color: #00f; font-family: 'Times New Roman', serif; padding: 18px 26px; font-size: 16px; line-height: 1.3; }
+.ba .old h4 { font-size: 26px; color: #000; text-decoration: underline; }
+.ba .old u { color: #00e; margin-right: 12px; }
+.ba .old .bx { margin-top: 14px; width: 330px; height: 90px; background: #ddd; color: #555; display: grid; place-items: center; font-size: 12px; }
+.ba .old p { color: #000; font-size: 13px; margin-top: 12px; max-width: 420px; }
+.ba .new { background: radial-gradient(500px 300px at 80% 0, #ff6b3d44, transparent), #0e1626; font-family: 'Onest', sans-serif; padding: 20px 28px; clip-path: inset(0 0 0 var(--p, 50%)); color: #fff; }
+.ba .new .nv { display: flex; justify-content: space-between; align-items: center; font-weight: 600; }
+.ba .new .nv span { color: #98a8c2; font-size: 14px; font-weight: 400; margin-left: 18px; }
+.ba .new h4 { font-family: 'Unbounded', sans-serif; font-weight: 500; font-size: 30px; line-height: 1.15; margin: 38px 0 12px; max-width: 420px; }
+.ba .new p { color: #aab8d0; max-width: 380px; }
+.ba .new .bt { display: inline-block; margin-top: 18px; padding: 13px 22px; border-radius: 12px; background: linear-gradient(90deg, #ff6b3d, #ffb23d); color: #1a0f05; font-weight: 700; }
+.ba .hdl { position: absolute; top: 0; bottom: 0; left: var(--p, 50%); width: 3px; background: #ffb23d; margin-left: -1px; pointer-events: none; }
+.ba .hdl::after { content: "↔"; position: absolute; top: 50%; left: 50%; width: 40px; height: 40px; margin: -20px; border-radius: 50%; background: #ffb23d; color: #1a0f05; display: grid; place-items: center; font-weight: 700; }
+.ba input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; }
+.ba .lab { position: absolute; bottom: 12px; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 700; z-index: 2; }
+.ba .lab.l { left: 12px; background: #f33; color: #fff; }
+.ba .lab.r { right: 12px; background: #38e1c3; color: #04201a; }
+.ba .fx { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+.ba .fx span { padding: 7px 14px; border-radius: 30px; background: #ffffff12; border: 1px solid #ffffff1a; font-size: 13px; }
+.ba .fx span::before { content: "✓ "; color: #38e1c3; }
+
+/* texts */
+.sx.tx { background: #f5f1ea; padding: 30px 40px; color: #1d1b17; }
+.tx .hd { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+.tx .hd h3 { font-family: 'Playfair Display', serif; font-size: 28px; }
+.tx .sw { display: flex; padding: 4px; border-radius: 30px; background: #e4dccd; }
+.tx .sw button { padding: 8px 18px; border-radius: 30px; background: transparent; color: #5a5448; font-weight: 600; }
+.tx .sw button.on { background: #1d1b17; color: #fff; }
+.tx .pg { border-radius: 22px; background: #fff; padding: 30px 34px; min-height: 410px; box-shadow: 0 20px 40px -24px #0003; }
+.tx .pg .tag { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #8a7d6b; }
+.tx .pg h4 { font-family: 'Playfair Display', serif; font-size: 30px; line-height: 1.15; margin: 8px 0 14px; }
+.tx .pg p { color: #4a463e; font-size: 16px; line-height: 1.6; margin-bottom: 14px; }
+.tx .pg ul { padding-left: 20px; color: #4a463e; line-height: 1.8; }
+.tx .pg .bt { display: inline-block; margin-top: 12px; padding: 12px 22px; border-radius: 30px; background: #2f5d50; color: #fff; font-weight: 600; }
+.tx .pg.bad h4 { font-family: Arial, sans-serif; font-size: 20px; }
+.tx .pg.bad p { color: #777; font-size: 14px; }
+.tx .pg > div { animation: qrIn .5s both; }
+.tx .note { margin-top: 12px; color: #6d675b; font-size: 14px; }
+
+/* services list on page */
+.x-all { margin-top: 34px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.x-ag h4 { margin: 0 0 12px; font-family: var(--display); font-weight: 500; font-size: 14px; color: var(--amber); letter-spacing: .05em; text-transform: uppercase; }
+.x-ag button { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; padding: 13px 0; border: 0; border-bottom: 1px solid var(--line); background: none; color: inherit; font: inherit; font-size: 15.5px; text-align: left; cursor: pointer; transition: padding .25s, color .25s; }
+.x-ag button:hover { padding-left: 10px; color: var(--aqua); }
+.x-ag button span { color: var(--muted); font-size: 13.5px; white-space: nowrap; }
+.x-ag button span i { font-style: normal; color: var(--amber); margin-left: 8px; }
+@media (max-width: 980px) { .x-all { grid-template-columns: 1fr; gap: 22px; } }
+
+
+.shop { cursor: default; }
+.shop .cart { border: 0; cursor: pointer; }
+.shop .drawer { position: absolute; right: 0; top: 0; bottom: 0; width: 330px; padding: 22px 24px; background: #fff; box-shadow: -20px 0 40px -20px #0004; transform: translateX(105%); transition: transform .4s cubic-bezier(.2,.8,.2,1); z-index: 8; display: flex; flex-direction: column; }
+.shop .drawer.on { transform: none; }
+.shop .dh { display: flex; justify-content: space-between; align-items: center; font-size: 18px; margin-bottom: 14px; }
+.shop .dx { width: 32px; height: 32px; border-radius: 50%; background: #f2e6d4; font-size: 18px; line-height: 1; }
+.shop .dl { flex: 1; overflow: auto; display: grid; gap: 10px; align-content: start; }
+.shop .di { display: grid; grid-template-columns: 1fr auto auto; gap: 10px; align-items: center; padding: 10px 0; border-bottom: 1px solid #eee5d8; font-size: 13.5px; }
+.shop .qt { display: inline-flex; align-items: center; gap: 8px; }
+.shop .qt button { width: 24px; height: 24px; border-radius: 50%; background: #f2e6d4; line-height: 1; }
+.shop .em0 { color: #9a9a9a; padding: 20px 0; text-align: center; }
+.shop .dt { display: flex; justify-content: space-between; padding: 14px 0; font-size: 17px; }
+.shop .dgo { padding: 14px; border-radius: 14px; background: #2f5d50; color: #fff; font-weight: 700; }
+.qrm .qc { display: inline-flex; align-items: center; gap: 6px; }
+.qrm .qc i { font-style: normal; min-width: 14px; text-align: center; font-size: 14px; }
+.qrm .qc button { width: 28px; height: 28px; border-radius: 50%; background: #2a2118; color: #fff; font-size: 17px; line-height: 1; }
+.qrm .qc .mn { background: #efe5d3; color: #2a2118; }
+.shop .qt button, .shop .dx, .shop .add { color: #2a2118; }
+.shop .add:hover { color: #fff; }
 </style>
 </head>
 <body>
 
 <nav class="x-nav"><div class="x-wrap">
-  <a class="x-brand" href="#top"><i></i>Сайты и боты · Гомель</a>
-  <div class="x-navlinks"><a href="#services">Услуги</a><a href="#works">Работы</a><a href="#price">Цены</a><a href="#process">Как работаю</a><a href="#faq">Вопросы</a></div>
-  <a class="x-btn small" href="https://t.me/">Написать</a>
+  <a class="x-brand" href="#top"><i></i>Сайты и боты · Беларусь</a>
+  <div class="x-navlinks"><a href="#works">Работы</a><a href="#services">Услуги</a><a href="#price">Цены</a><a href="#process">Как работаю</a><a href="#faq">Вопросы</a></div>
+  <a class="x-btn small" href="https://t.me/">Бесплатный макет</a>
 </div></nav>
 
 <main id="top">
 <div class="x-wrap">
   <section class="x-top">
     <div>
-      <span class="x-eyebrow"><b></b>Беру новые заказы в Гомеле</span>
-      <h1>Сайты, боты и автоматизация, которые <span class="x-grad">приводят клиентов</span></h1>
-      <p class="x-lead">Делаю сайты, интернет-магазины, Telegram-боты, дизайн и автоматизацию для любого бизнеса: от салона и кафе до стройки и услуг для компаний. Первый макет показываю бесплатно, платите, только если он нравится.</p>
-      <div class="x-cta"><a class="x-btn" href="https://t.me/">Написать в Telegram</a><a class="x-btn ghost" href="#works">Смотреть работы</a></div>
+      <span class="x-eyebrow"><b></b>Бесплатный макет за 2–3 дня · по всей Беларуси</span>
+      <h1>Сайт или бот, который <span class="x-grad">принимает заявки сам</span>, пока вы работаете</h1>
+      <p class="x-lead">Сначала я бесплатно делаю макет под ваш бизнес. Понравился — оплачиваете и запускаем. Нет — вы ничего не потеряли.</p>
+      <div class="x-cta"><a class="x-btn" href="https://t.me/">Получить бесплатный макет</a><a class="x-btn ghost" href="#works">Посмотреть работы</a></div>
       <div class="x-facts"><div><b>2–3 дня</b>до первого макета</div><div><b>0 BYN</b>за показ макета</div><div><b>от 150 BYN</b>за Telegram-бота</div></div>
     </div>
     <div class="x-scene" id="heroScene" aria-hidden="true"><div class="x-tilt">
@@ -497,31 +821,28 @@ html, body { overflow-x: clip; }
 <div class="x-mq" aria-hidden="true"><div class="x-mqi"><span>Салоны красоты</span><em>✦</em><span>Автосервисы</span><em>✦</em><span>Кафе и рестораны</span><em>✦</em><span>Магазины</span><em>✦</em><span>Репетиторы и курсы</span><em>✦</em><span>Строительство и ремонт</span><em>✦</em><span>Медицина и стоматология</span><em>✦</em><span>Фитнес и спорт</span><em>✦</em><span>Доставка и логистика</span><em>✦</em><span>Услуги для компаний</span><em>✦</em><span>Фотографы и мастера</span><em>✦</em><span>Недвижимость</span><em>✦</em><span>Салоны красоты</span><em>✦</em><span>Автосервисы</span><em>✦</em><span>Кафе и рестораны</span><em>✦</em><span>Магазины</span><em>✦</em><span>Репетиторы и курсы</span><em>✦</em><span>Строительство и ремонт</span><em>✦</em><span>Медицина и стоматология</span><em>✦</em><span>Фитнес и спорт</span><em>✦</em><span>Доставка и логистика</span><em>✦</em><span>Услуги для компаний</span><em>✦</em><span>Фотографы и мастера</span><em>✦</em><span>Недвижимость</span><em>✦</em></div></div>
 
 <div class="x-wrap">
-  <section class="x-sec" id="services">
-    <h2>Чем могу помочь вашему бизнесу</h2>
-    <p class="x-sub">Беру задачи в самых разных нишах. Если цель в том, чтобы больше людей находили вас и оставляли заявки, скорее всего, я смогу помочь.</p>
-    <div class="x-svc">
-      <div class="x-sv"><i>🌐</i><b>Сайты-визитки и лендинги</b><span>Страница с услугами, ценами, контактами и кнопкой записи. Анимации и 3D по желанию.</span><em>от 250 BYN</em></div>
-      <div class="x-sv"><i>🛒</i><b>Интернет-магазины и каталоги</b><span>Витрина товаров или услуг, корзина, заявка на заказ вам в Telegram.</span><em>от 450 BYN</em></div>
-      <div class="x-sv"><i>🤖</i><b>Telegram-боты</b><span>Запись, заказы, каталог, расчёт стоимости, ответы на вопросы, рассылки клиентам.</span><em>от 150 BYN</em></div>
-      <div class="x-sv"><i>⚙️</i><b>Автоматизация</b><span>Заявки в Google-таблицу, уведомления, напоминания клиентам, выгрузка и обработка данных.</span><em>от 80 BYN</em></div>
-      <div class="x-sv"><i>🎨</i><b>Дизайн и фирстиль</b><span>Логотип, баннеры, обложки и оформление Instagram и Telegram в едином стиле.</span><em>от 40 BYN</em></div>
-      <div class="x-sv"><i>📊</i><b>Презентации и КП</b><span>Красивая презентация компании или коммерческое предложение, которое читают до конца.</span><em>от 60 BYN</em></div>
-      <div class="x-sv"><i>🔧</i><b>Доработка сайта</b><span>Исправлю, ускорю или обновлю уже существующий сайт. Добавлю формы, цены и новые разделы.</span><em>от 30 BYN</em></div>
-      <div class="x-sv"><i>✍️</i><b>Тексты и наполнение</b><span>Описания услуг, посты, ответы для бота, подбор структуры и заголовков.</span><em>от 30 BYN</em></div>
+  <section class="x-sec" id="pain">
+    <h2>Знакомо?</h2>
+    <div class="x-pain">
+      <div class="x-pn"><b>Клиент пишет вечером, а вы отвечаете утром</b><span>К этому времени он уже записался к тому, кто ответил сразу.</span></div>
+      <div class="x-pn"><b>Вас ищут в интернете, а находят конкурентов</b><span>Нет сайта или он выглядит так, что хочется закрыть вкладку.</span></div>
+      <div class="x-pn"><b>Записи в блокноте и десяти чатах</b><span>Заявки теряются, время путается, а клиент остаётся недоволен.</span></div>
     </div>
-    <div class="x-any"><b>Нет своей задачи в списке?</b> Опишите её в двух словах. Скажу честно, возьмусь ли и за сколько, а если не моё, подскажу, к кому обратиться.</div>
+    <div class="x-fix"><b>Решение простое:</b> красивый сайт показывает ваш бизнес с лучшей стороны, а бот принимает записи и заказы круглосуточно и присылает их вам в Telegram.</div>
   </section>
 
   <section class="x-sec" id="works">
-    <h2>Примеры работ</h2>
-    <p class="x-sub">Нажмите на любой макет, и он откроется на весь экран. Сайты реагируют на курсор, а в ботах можно нажимать кнопки и пройти весь сценарий.</p>
+    <h2>Посмотрите, как это выглядит у клиента</h2>
+    <p class="x-sub">Здесь макет на каждую услугу. Нажмите на любой, он откроется на весь экран, и его можно потрогать: добавить товар в корзину, посчитать цену, пройти сценарий бота.</p>
 
     <div class="x-row-title">Сайты</div>
     <div class="x-grid">
       <button class="x-tile" data-open="demo-salon"><div class="x-prev" data-prev="salon"><div class="frame"></div></div><div class="x-info"><span class="x-kind site">Сайт</span><b>Салон красоты</b><span>Онлайн-запись, прайс, мягкая 3D-сцена.</span><span class="x-open">Открыть макет <i>→</i></span></div></button>
       <button class="x-tile" data-open="demo-auto"><div class="x-prev" data-prev="auto"><div class="frame"></div></div><div class="x-info"><span class="x-kind site">Сайт</span><b>Автосервис</b><span>Вращающееся колесо, цены, кнопка звонка.</span><span class="x-open">Открыть макет <i>→</i></span></div></button>
       <button class="x-tile" data-open="demo-math"><div class="x-prev" data-prev="math"><div class="frame"></div></div><div class="x-info"><span class="x-kind site">Сайт</span><b>Репетитор или мастер</b><span>Кубики с формулами, график, тарифы.</span><span class="x-open">Открыть макет <i>→</i></span></div></button>
+      <button class="x-tile" data-open="show-shop"><div class="x-prev show" data-show="shop"></div><div class="x-info"><span class="x-kind">Сайт</span><b>Интернет-магазин</b><span>Каталог, фильтры и корзина. Попробуйте добавить товар.</span><span class="x-open">Открыть макет <i>→</i></span></div></button>
+      <button class="x-tile" data-open="show-qrmenu"><div class="x-prev show" data-show="qrmenu"></div><div class="x-info"><span class="x-kind">Сайт</span><b>QR-меню для кафе</b><span>Гость сканирует код и заказывает с телефона.</span><span class="x-open">Открыть макет <i>→</i></span></div></button>
+      <button class="x-tile" data-open="show-calc"><div class="x-prev show" data-show="calc"></div><div class="x-info"><span class="x-kind">Сайт</span><b>Калькулятор стоимости</b><span>Клиент сам считает цену и оставляет заявку.</span><span class="x-open">Открыть макет <i>→</i></span></div></button>
     </div>
 
     <div class="x-row-title">Telegram-боты</div>
@@ -529,12 +850,96 @@ html, body { overflow-x: clip; }
       <button class="x-tile" data-open="bot-salon"><div class="x-prev bot" data-botprev="salon"></div><div class="x-info"><span class="x-kind">Бот</span><b>Запись в салон</b><span>Услуга, день, время и уведомление мастеру.</span><span class="x-open">Попробовать бота <i>→</i></span></div></button>
       <button class="x-tile" data-open="bot-shop"><div class="x-prev bot" data-botprev="shop"></div><div class="x-info"><span class="x-kind">Бот</span><b>Магазин с каталогом</b><span>Каталог, корзина, доставка, заказ владельцу.</span><span class="x-open">Попробовать бота <i>→</i></span></div></button>
       <button class="x-tile" data-open="bot-auto"><div class="x-prev bot" data-botprev="auto"></div><div class="x-info"><span class="x-kind">Бот</span><b>Расчёт ремонта</b><span>Цена по симптомам и запись на диагностику.</span><span class="x-open">Попробовать бота <i>→</i></span></div></button>
+      <button class="x-tile" data-open="bot-remind"><div class="x-prev bot" data-botprev="remind"></div><div class="x-info"><span class="x-kind">Бот</span><b>Напоминания о визите</b><span>Подтверждение, перенос и отмена в два нажатия.</span><span class="x-open">Попробовать бота <i>→</i></span></div></button>
     </div>
-    <p class="x-hint">Названия, цены и тексты в макетах выдуманные. Это примеры из трёх ниш, а такой же подход работает для кафе, медицины, строительства, фитнеса, доставки и других сфер.</p>
+
+    <div class="x-row-title">Автоматизация</div>
+    <div class="x-grid">
+      <button class="x-tile" data-open="show-flow"><div class="x-prev show" data-show="flow"></div><div class="x-info"><span class="x-kind">Автоматизация</span><b>Заявки в таблицу и Telegram</b><span>Смотрите, как заявка проходит весь путь.</span><span class="x-open">Открыть макет <i>→</i></span></div></button>
+      <button class="x-tile" data-open="show-crm"><div class="x-prev show" data-show="crm"></div><div class="x-info"><span class="x-kind">Автоматизация</span><b>Учёт клиентов и продаж</b><span>Таблица со статусами, суммами и фильтрами.</span><span class="x-open">Открыть макет <i>→</i></span></div></button>
+    </div>
+
+    <div class="x-row-title">Дизайн</div>
+    <div class="x-grid">
+      <button class="x-tile" data-open="show-brand"><div class="x-prev show" data-show="brand"></div><div class="x-info"><span class="x-kind">Дизайн</span><b>Логотип и фирстиль</b><span>Три стиля для одного бизнеса. Переключайте.</span><span class="x-open">Открыть макет <i>→</i></span></div></button>
+      <button class="x-tile" data-open="show-social"><div class="x-prev show" data-show="social"></div><div class="x-info"><span class="x-kind">Дизайн</span><b>Instagram и Telegram</b><span>Единое оформление профиля и канала.</span><span class="x-open">Открыть макет <i>→</i></span></div></button>
+      <button class="x-tile" data-open="show-print"><div class="x-prev show" data-show="print"></div><div class="x-info"><span class="x-kind">Дизайн</span><b>Визитки и листовки</b><span>Печатные материалы в стиле бренда.</span><span class="x-open">Открыть макет <i>→</i></span></div></button>
+    </div>
+
+    <div class="x-row-title">Документы, доработки и тексты</div>
+    <div class="x-grid">
+      <button class="x-tile" data-open="show-deck"><div class="x-prev show" data-show="deck"></div><div class="x-info"><span class="x-kind">Документы</span><b>Презентация и КП</b><span>Слайды, которые убеждают. Листайте.</span><span class="x-open">Открыть макет <i>→</i></span></div></button>
+      <button class="x-tile" data-open="show-fix"><div class="x-prev show" data-show="fix"></div><div class="x-info"><span class="x-kind">Улучшение</span><b>Доработка сайта</b><span>Было и стало. Двигайте ползунок.</span><span class="x-open">Открыть макет <i>→</i></span></div></button>
+      <button class="x-tile" data-open="show-texts"><div class="x-prev show" data-show="texts"></div><div class="x-info"><span class="x-kind">Тексты</span><b>Тексты для сайта и бота</b><span>Сравните слабый и сильный вариант.</span><span class="x-open">Открыть макет <i>→</i></span></div></button>
+    </div>
+
+    <p class="x-hint">Названия, цены и тексты в макетах выдуманные. Каждый макет можно адаптировать под любую нишу: кафе, медицину, стройку, фитнес, доставку и другие.</p>
+  </section>
+
+  <section class="x-sec" id="services">
+    <h2>Что я для вас сделаю</h2>
+    <p class="x-sub">Три главных решения и полный список услуг. У каждой есть пример: нажмите и посмотрите, как это работает.</p>
+    <div class="x-big">
+      <div class="x-bc" data-tilt>
+        <span class="tag">Сайт</span>
+        <h3>Сайт, который продаёт</h3>
+        <p>Посетитель за секунды понимает, чем вы полезны, и сразу оставляет заявку.</p>
+        <ul><li>Услуги, цены, фото и отзывы</li><li>Кнопка записи и звонка</li><li>Анимация и 3D-сцена на первом экране</li><li>Удобно на телефоне</li></ul>
+        <div class="foot"><b><small>от</small>250 BYN</b><a class="x-btn small" href="https://t.me/">Заказать</a></div>
+      </div>
+      <div class="x-bc hit" data-tilt>
+        <span class="tag">Выгодно</span>
+        <h3>Сайт и бот вместе</h3>
+        <p>Сайт привлекает клиентов, а бот сам записывает их и присылает вам заявки.</p>
+        <ul><li>Сайт с анимацией</li><li>Бот записи или заказов</li><li>Единый стиль и общая статистика заявок</li><li>Экономия по сравнению с раздельным заказом</li></ul>
+        <div class="foot"><b><small>от</small>380 BYN</b><a class="x-btn small" href="https://t.me/">Заказать</a></div>
+      </div>
+      <div class="x-bc bot" data-tilt>
+        <span class="tag">Бот</span>
+        <h3>Telegram-бот помощник</h3>
+        <p>Отвечает клиентам на вопросы, принимает записи и заказы в любое время суток.</p>
+        <ul><li>Запись, каталог или расчёт цены</li><li>Заявка сразу вам в Telegram</li><li>Рассылки и напоминания клиентам</li><li>Ответы на частые вопросы</li></ul>
+        <div class="foot"><b><small>от</small>150 BYN</b><a class="x-btn small" href="https://t.me/">Заказать</a></div>
+      </div>
+    </div>
+    <div class="x-all">
+        <div class="x-ag"><h4>Сайты</h4>
+          <button data-open="demo-salon">Сайт-визитка и лендинг<span>от 250 BYN<i>Пример →</i></span></button>
+          <button data-open="show-shop">Интернет-магазин<span>от 450 BYN<i>Пример →</i></span></button>
+          <button data-open="show-qrmenu">QR-меню для кафе<span>от 120 BYN<i>Пример →</i></span></button>
+          <button data-open="show-calc">Калькулятор стоимости<span>от 150 BYN<i>Пример →</i></span></button>
+        </div>
+        <div class="x-ag"><h4>Боты и автоматизация</h4>
+          <button data-open="bot-salon">Бот записи<span>от 150 BYN<i>Пример →</i></span></button>
+          <button data-open="bot-shop">Бот-магазин и заказы<span>от 180 BYN<i>Пример →</i></span></button>
+          <button data-open="bot-remind">Напоминания и рассылки<span>от 150 BYN<i>Пример →</i></span></button>
+          <button data-open="show-flow">Заявки в таблицу и Telegram<span>от 80 BYN<i>Пример →</i></span></button>
+          <button data-open="show-crm">Учёт клиентов в таблице<span>от 100 BYN<i>Пример →</i></span></button>
+        </div>
+        <div class="x-ag"><h4>Дизайн и контент</h4>
+          <button data-open="show-brand">Логотип и фирстиль<span>от 60 BYN<i>Пример →</i></span></button>
+          <button data-open="show-social">Оформление Instagram и Telegram<span>от 40 BYN<i>Пример →</i></span></button>
+          <button data-open="show-print">Визитки и листовки<span>от 30 BYN<i>Пример →</i></span></button>
+          <button data-open="show-deck">Презентация и КП<span>от 60 BYN<i>Пример →</i></span></button>
+          <button data-open="show-fix">Доработка вашего сайта<span>от 30 BYN<i>Пример →</i></span></button>
+          <button data-open="show-texts">Тексты для сайта и бота<span>от 30 BYN<i>Пример →</i></span></button>
+        </div>
+    </div>
+    <div class="x-any"><b>Нужно что-то другое?</b> Опишите задачу в двух словах. Скажу честно, возьмусь ли и за сколько.</div>
+  </section>
+
+  <section class="x-sec" id="why">
+    <h2>Почему со мной безопасно</h2>
+    <div class="x-why">
+      <div class="x-wy"><strong>0 BYN</strong><b>Макет бесплатно</b><span>Вы сначала видите результат и только потом решаете, платить или нет.</span></div>
+      <div class="x-wy"><strong>2–3 дня</strong><b>До первого макета</b><span>Не растягиваю работу. Сроки называю заранее.</span></div>
+      <div class="x-wy"><strong>Фикс</strong><b>Цена до начала</b><span>Называю итоговую сумму сразу. Никаких доплат в процессе.</span></div>
+      <div class="x-wy"><strong>∞</strong><b>Правки до результата</b><span>Вносим изменения, пока вам не понравится каждый экран.</span></div>
+    </div>
   </section>
 
   <section class="x-sec" id="price">
-    <h2>Сколько это стоит</h2>
+    <h2>Цены без сюрпризов</h2>
     <p class="x-sub">Точную цену называю после короткого разговора, до начала работы.</p>
     <div class="x-price">
       <div class="x-pc" data-tilt><small>Сайт</small><h3>Одностраничник</h3><div class="pr">от 250 <span>BYN</span></div><ul><li>Услуги, цены, фото</li><li>Кнопка записи или звонка</li><li>Адаптация под телефон</li><li>Срок 2–3 дня</li></ul></div>
@@ -542,15 +947,7 @@ html, body { overflow-x: clip; }
       <div class="x-pc" data-tilt><small>Бот</small><h3>Telegram-бот</h3><div class="pr">от 150 <span>BYN</span></div><ul><li>Запись, каталог или расчёт</li><li>Заявки вам в Telegram</li><li>Ответы на частые вопросы</li><li>Срок 3–5 дней</li></ul></div>
       <div class="x-pc hot" data-tilt><small>Выгодно</small><h3>Сайт и бот вместе</h3><div class="pr">от 380 <span>BYN</span></div><ul><li>Сайт с анимацией</li><li>Бот записи или заказов</li><li>Единый стиль</li><li>Срок 5–7 дней</li></ul></div>
     </div>
-    <p class="x-note">Сайт до 5 разделов — от 450 BYN. Интернет-магазин — от 450 BYN, итог зависит от числа товаров.</p>
-    <div class="x-more">
-      <div>Автоматизация заявок и таблиц<b>от 80 BYN</b></div>
-      <div>Логотип и фирстиль<b>от 60 BYN</b></div>
-      <div>Презентация или КП<b>от 60 BYN</b></div>
-      <div>Оформление Instagram или Telegram<b>от 40 BYN</b></div>
-      <div>Правки и доработка сайта<b>от 30 BYN</b></div>
-      <div>Тексты для сайта или бота<b>от 30 BYN</b></div>
-    </div>
+    <p class="x-note">Сайт до 5 разделов — от 450 BYN. Интернет-магазин — от 450 BYN, итог зависит от числа товаров. Остальные услуги и их цены — в разделе «Что я для вас сделаю».</p>
   </section>
 
   <section class="x-sec" id="process">
@@ -567,6 +964,7 @@ html, body { overflow-x: clip; }
   <section class="x-sec" id="faq">
     <h2>Частые вопросы</h2>
     <div class="x-faq" style="margin-top:28px">
+      <details><summary>Вы работаете в моём городе?</summary><p>Я работаю удалённо с клиентами по всей Беларуси. Всё обсуждаем и показываем макеты в Telegram, встречаться не обязательно.</p></details>
       <details><summary>Что мне нужно подготовить?</summary><p>Название, список услуг с ценами, адрес, телефон и несколько фото. Если фото нет, подберём оформление без них, а настоящие добавим позже.</p></details>
       <details><summary>Когда я плачу?</summary><p>Первый макет показываю бесплатно. Оплата после того, как вы одобрили результат и до публикации.</p></details>
       <details><summary>Смогу ли я сам менять цены и тексты?</summary><p>Да. В конце отправляю короткую инструкцию, а сложные правки могу вносить по запросу.</p></details>
@@ -576,13 +974,14 @@ html, body { overflow-x: clip; }
   </section>
 
   <section class="x-final">
-    <h2>Расскажите, что нужно вашему бизнесу</h2>
+    <h2>Получите бесплатный макет для своего бизнеса</h2>
     <p>Напишите название бизнеса и задачу: сайт, бот, дизайн, автоматизация или что-то своё. Отвечу в течение нескольких часов и предложу вариант с ценой.</p>
-    <a class="x-btn" href="https://t.me/">Написать в Telegram</a>
+    <a class="x-btn" href="https://t.me/">Написать и получить макет</a>
   </section>
 </div>
 </main>
-<footer>Сайты и Telegram-боты · Гомель</footer>
+<div class="x-sticky"><a class="x-btn" href="https://t.me/">Получить бесплатный макет</a></div>
+<footer>Сайты и Telegram-боты · работаю по всей Беларуси</footer>
 
 <div class="x-ov" id="ov" hidden role="dialog" aria-modal="true" aria-labelledby="ovTitle">
   <div class="x-ovbar">
@@ -597,7 +996,7 @@ html, body { overflow-x: clip; }
   <div class="nav"><div class="logo">Лето</div><div class="links"><span>Услуги</span><span>Цены</span><span>Мастера</span><span>Контакты</span></div><div class="nb">Записаться</div></div>
   <div class="hero">
     <div>
-      <div class="h">Красота без спешки в <em>центре Гомеля</em></div>
+      <div class="h">Красота без спешки в <em>центре города</em></div>
       <p>Маникюр, брови и уход за волосами. Запись онлайн за минуту, работаем ежедневно до 21:00.</p>
       <div class="row"><span class="p1">Записаться онлайн</span><span class="p2">Смотреть цены</span></div>
     </div>
@@ -624,7 +1023,7 @@ html, body { overflow-x: clip; }
     </div>
     <div class="form"><div class="bt" style="font-size:1.6em;margin:0">Записаться на удобное время</div><div class="f">Ваше имя</div><div class="f">Телефон</div><div class="f">Услуга и дата</div><div class="go">Отправить заявку</div></div>
   </div>
-  <div class="foot"><span>Гомель, ул. Советская</span><span>Ежедневно 9:00–21:00</span></div>
+  <div class="foot"><span>ул. Советская, 12</span><span>Ежедневно 9:00–21:00</span></div>
 </div></template>
 
 <template id="tpl-auto"><div class="mock a">
@@ -660,7 +1059,7 @@ html, body { overflow-x: clip; }
     <div><i>02</i><b>Диагностика и смета</b><span>Согласуем цену до начала работ.</span></div>
     <div><i>03</i><b>Ремонт и гарантия</b><span>Отдаём авто и документ с гарантией.</span></div>
   </div>
-  <div class="foot"><span>Гомель, ул. Объездная</span><span>Пн–Сб 9:00–19:00</span></div>
+  <div class="foot"><span>ул. Объездная, 5</span><span>Пн–Сб 9:00–19:00</span></div>
 </div></template>
 
 <template id="tpl-math"><div class="mock t">
@@ -669,7 +1068,7 @@ html, body { overflow-x: clip; }
     <div>
       <span class="badge">Подготовка к ЦТ и школьной программе</span>
       <div class="h">Математика без стресса и с <em>понятным результатом</em></div>
-      <p>Занятия онлайн и очно в Гомеле. Первое занятие бесплатное: определим уровень и составим план.</p>
+      <p>Занятия онлайн и очно. Первое занятие бесплатное: определим уровень и составим план.</p>
       <div class="row"><span class="p1">Записаться на пробное</span><span class="p2">Посмотреть программу</span></div>
     </div>
     <div class="scene" aria-hidden="true">
@@ -705,7 +1104,7 @@ html, body { overflow-x: clip; }
       <div class="pk"><small>Для подготовки к ЦТ</small><b>340 BYN</b><span>Пакет из 16 занятий</span></div>
     </div>
   </div>
-  <div class="foot"><span>Гомель · онлайн</span><span>Ежедневно 10:00–20:00</span></div>
+  <div class="foot"><span>Онлайн по всей Беларуси</span><span>Ежедневно 10:00–20:00</span></div>
 </div></template>
 
 <script>
@@ -721,7 +1120,12 @@ html, body { overflow-x: clip; }
     'demo-math':  { kind: 'site', tpl: 'tpl-math',  title: 'Сайт репетитора', url: 'matematika-gomel.by' },
     'bot-salon':  { kind: 'bot', bot: 'salon', title: 'Telegram-бот для салона' },
     'bot-shop':   { kind: 'bot', bot: 'shop',  title: 'Telegram-бот для магазина' },
-    'bot-auto':   { kind: 'bot', bot: 'auto',  title: 'Telegram-бот для автосервиса' }
+    'bot-auto':   { kind: 'bot', bot: 'auto',  title: 'Telegram-бот для автосервиса' },
+    'bot-remind': { kind: 'bot', bot: 'remind', title: 'Telegram-бот напоминаний для клиники' },
+    'show-shop': { kind: 'show', show: 'shop' }, 'show-qrmenu': { kind: 'show', show: 'qrmenu' }, 'show-calc': { kind: 'show', show: 'calc' },
+    'show-flow': { kind: 'show', show: 'flow' }, 'show-crm': { kind: 'show', show: 'crm' }, 'show-brand': { kind: 'show', show: 'brand' },
+    'show-social': { kind: 'show', show: 'social' }, 'show-print': { kind: 'show', show: 'print' }, 'show-deck': { kind: 'show', show: 'deck' },
+    'show-fix': { kind: 'show', show: 'fix' }, 'show-texts': { kind: 'show', show: 'texts' }
   };
   var PREV = { salon: 'tpl-salon', auto: 'tpl-auto', math: 'tpl-math' };
 
@@ -735,7 +1139,7 @@ html, body { overflow-x: clip; }
       steps: {
         start: { say: ['Здравствуйте! Я бот студии «Лето». Помогу записаться за минуту и напомню о визите.'], kb: [[['Записаться', 'svc']], [['Цены', 'price'], ['Адрес и часы', 'addr']]] },
         price: { say: ['Маникюр с покрытием — от 45 BYN\nКоррекция бровей — от 20 BYN\nОкрашивание волос — от 60 BYN'], kb: [[['Записаться', 'svc'], ['В начало', 'start']]] },
-        addr: { say: ['Гомель, ул. Советская.\nЕжедневно с 9:00 до 21:00.'], kb: [[['Записаться', 'svc'], ['В начало', 'start']]] },
+        addr: { say: ['ул. Советская, 12.\nЕжедневно с 9:00 до 21:00.'], kb: [[['Записаться', 'svc'], ['В начало', 'start']]] },
         svc: { say: ['Выберите услугу:'], kb: [[['Маникюр · 45 BYN', 'day', 'svc=Маникюр']], [['Брови · 20 BYN', 'day', 'svc=Брови']], [['Уход за волосами · 40 BYN', 'day', 'svc=Уход за волосами']]] },
         day: { say: ['Отлично. На какой день записать?'], kb: [[['Сегодня', 'time', 'day=сегодня'], ['Завтра', 'time', 'day=завтра'], ['Пятница', 'time', 'day=в пятницу']]] },
         time: { say: ['Свободное время:'], kb: [[['11:00', 'done', 't=11:00'], ['13:30', 'done', 't=13:30']], [['16:00', 'done', 't=16:00'], ['18:30', 'done', 't=18:30']]] },
@@ -748,14 +1152,24 @@ html, body { overflow-x: clip; }
       feats: ['Каталог и корзина внутри Telegram', 'Доставка или самовывоз на выбор', 'Заказ приходит вам одним сообщением', 'Можно подключить онлайн-оплату'],
       init: 'start', auto: [0, 0, 0, 0, 0],
       steps: {
-        start: { say: ['Добро пожаловать в «Зерно»! Свежая обжарка с доставкой по Гомелю.'], kb: [[['Каталог', 'cat'], ['Корзина', 'cart']], [['Доставка и оплата', 'dl']]] },
+        start: { say: ['Добро пожаловать в «Зерно»! Свежая обжарка с доставкой по Беларуси.'], kb: [[['Каталог', 'cat'], ['Корзина', 'cart']], [['Доставка и оплата', 'dl']]] },
         cat: { say: ['Выберите кофе:'], kb: [[['Эфиопия · 18 BYN', 'item', 'item=Эфиопия|p=18']], [['Бразилия · 15 BYN', 'item', 'item=Бразилия|p=15']], [['Колумбия · 17 BYN', 'item', 'item=Колумбия|p=17']]] },
         item: { say: ['{item}, 250 г. Цена {p} BYN. Добавить в корзину?'], kb: [[['Добавить в корзину', 'added'], ['Назад', 'cat']]] },
-        added: { say: ['Добавлено в корзину. Оформить заказ?'], kb: [[['Оформить заказ', 'how']], [['Выбрать ещё', 'cat']]] },
+        added: {
+          run: function (c) { var k = (c._c = c._c || []); k.push({ n: c.item, p: +c.p }); c.cnt = String(k.length); c.sum = String(k.reduce(function (a, x) { return a + x.p; }, 0)); c.list = k.map(function (x) { return x.n + ' 250 г — ' + x.p + ' BYN'; }).join('\n'); },
+          say: ['Добавлено: {item}. В корзине позиций: {cnt}, итого {sum} BYN.'], kb: [[['Оформить заказ', 'how']], [['Выбрать ещё', 'cat']]]
+        },
         how: { say: ['Как получить заказ?'], kb: [[['Доставка · 5 BYN', 'done', 'how=с доставкой']], [['Самовывоз · бесплатно', 'done', 'how=самовывоз']]] },
-        done: { say: ['Заказ принят! {item}, 250 г, {how}.', 'Менеджер напишет для подтверждения в течение 10 минут.'], notify: ['Новый заказ №104', '{item}, 250 г · {how}', 'Клиент: Игорь С.'], kb: [[['Заказать ещё', 'cat'], ['В начало', 'start']]] },
-        cart: { say: ['Корзина пока пуста. Откройте каталог, чтобы выбрать кофе.'], kb: [[['Каталог', 'cat'], ['В начало', 'start']]] },
-        dl: { say: ['Доставка по Гомелю — 5 BYN, от 40 BYN бесплатно.\nОплата картой или наличными при получении.'], kb: [[['Каталог', 'cat'], ['В начало', 'start']]] }
+        done: {
+          say: ['Заказ принят!\n{list}\n{how}. Товары на {sum} BYN.', 'Менеджер напишет для подтверждения в течение 10 минут.'],
+          notify: ['Новый заказ №104', '{list}', 'Товары на {sum} BYN · {how}'],
+          clear: true, kb: [[['Заказать ещё', 'cat'], ['В начало', 'start']]]
+        },
+        cart: {
+          say: function (c) { return c._c && c._c.length ? ['В корзине:\n{list}\nИтого: {sum} BYN.'] : ['Корзина пока пуста. Откройте каталог, чтобы выбрать кофе.']; },
+          kb: function (c) { return c._c && c._c.length ? [[['Оформить заказ', 'how']], [['Выбрать ещё', 'cat']]] : [[['Каталог', 'cat'], ['В начало', 'start']]]; }
+        },
+        dl: { say: ['Доставка по городу — 5 BYN, от 40 BYN бесплатно.\nОплата картой или наличными при получении.'], kb: [[['Каталог', 'cat'], ['В начало', 'start']]] }
       }
     },
     auto: {
@@ -769,7 +1183,7 @@ html, body { overflow-x: clip; }
         ans: { say: ['Проблема: {iss}.\nОриентировочно: {pr}.', 'Точную цену назовём после диагностики за 30 BYN.'], kb: [[['Записаться на диагностику', 'day']], [['Другая проблема', 'issue']]] },
         day: { say: ['Когда вам удобно приехать?'], kb: [[['Сегодня', 'done', 'day=сегодня'], ['Завтра', 'done', 'day=завтра']]] },
         done: { say: ['Записал вас на {day}. Мастер напишет вечером и уточнит время.'], notify: ['Новая заявка', 'Диагностика · {day}', 'Клиент: Сергей П.'], kb: [[['В начало', 'start']]] },
-        cont: { say: ['Гомель, ул. Объездная.\nПн–Сб с 9:00 до 19:00.\nТелефон: +375 29 000-00-00.'], kb: [[['Записаться', 'day'], ['В начало', 'start']]] }
+        cont: { say: ['ул. Объездная, 5.\nПн–Сб с 9:00 до 19:00.\nТелефон: +375 29 000-00-00.'], kb: [[['Записаться', 'day'], ['В начало', 'start']]] }
       }
     }
   };
@@ -796,21 +1210,25 @@ html, body { overflow-x: clip; }
     }
     async function show(id, my) {
       var st = def.steps[id];
+      if (st.run) st.run(ctx);
+      var sayArr = typeof st.say === 'function' ? st.say(ctx) : st.say;
+      var kbRows = typeof st.kb === 'function' ? st.kb(ctx) : st.kb;
       busy = true; kb.innerHTML = ''; buttons = [];
-      for (var i = 0; i < st.say.length; i++) {
+      for (var i = 0; i < sayArr.length; i++) {
         var t = add('bot typing');
         t.innerHTML = '<i></i><i></i><i></i>';
         chat.scrollTop = chat.scrollHeight;
         await sleep(reduce ? 80 : 650);
         if (my !== token || dead) return;
         t.className = 'tg-m bot';
-        t.textContent = fill(st.say[i]);
+        t.textContent = fill(sayArr[i]);
         chat.scrollTop = chat.scrollHeight;
-        if (i < st.say.length - 1) await sleep(reduce ? 40 : 350);
+        if (i < sayArr.length - 1) await sleep(reduce ? 40 : 350);
         if (my !== token || dead) return;
       }
       if (st.notify && opts.onNotify) opts.onNotify(st.notify.map(fill));
-      st.kb.forEach(function (row) {
+      if (st.clear) { delete ctx._c; }
+      kbRows.forEach(function (row) {
         var r = document.createElement('div');
         r.className = 'tg-row';
         row.forEach(function (b) {
@@ -913,11 +1331,306 @@ html, body { overflow-x: clip; }
     root.querySelectorAll('[data-count]').forEach(function (el) { io.observe(el); });
   }
 
+  /* ---------- showcase demos (HTML-built mockups) ---------- */
+  function qrSvg() {
+    var n = 21, seed = 7, cells = '';
+    function rnd() { seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed / 0x7fffffff; }
+    function finder(x, y) { return (x < 7 && y < 7) || (x > 13 && y < 7) || (x < 7 && y > 13); }
+    for (var y = 0; y < n; y++) for (var x = 0; x < n; x++) {
+      var on;
+      if (finder(x, y)) {
+        var fx = x > 13 ? x - 14 : x, fy = y > 13 ? y - 14 : y;
+        on = fx === 0 || fx === 6 || fy === 0 || fy === 6 || (fx > 1 && fx < 5 && fy > 1 && fy < 5);
+      } else on = rnd() > 0.5;
+      if (on) cells += '<rect x="' + x + '" y="' + y + '" width="1" height="1"/>';
+    }
+    return '<svg viewBox="0 0 21 21" fill="#1f2a26" shape-rendering="crispEdges">' + cells + '</svg>';
+  }
+  function toast(root, text) {
+    var t = root.querySelector('.toast');
+    if (!t) return;
+    t.textContent = text; t.classList.add('on');
+    clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('on'); }, 1800);
+  }
+  function $$(root, sel) { return Array.prototype.slice.call(root.querySelectorAll(sel)); }
+
+  var SHOWS = {
+    shop: {
+      title: 'Интернет-магазин', url: 'dom-uyut.by',
+      html: function () {
+        var P = [['Ваза «Дюна»', 48, '#d9b08c,#b9825c', 'v', 'vase'], ['Свеча «Кедр»', 22, '#e8dcc8,#cbb894', 'c', 'candle'], ['Плед «Лён»', 95, '#c9d3c3,#9bae94', 'p', 'tex'], ['Кашпо «Мох»', 34, '#a8c0b3,#6f9686', 'v', 'vase'], ['Подсвечник «Ночь»', 28, '#4a5a56,#222b29', 'c', 'candle'], ['Подушка «Тон»', 39, '#e3c7b8,#c99b86', 'p', 'tex']];
+        return '<div class="sx shop"><header><b class="lg">Дом<i>&amp;</i>Уют</b><div class="sr">Поиск товаров…</div><button class="cart">Корзина <em>0</em></button></header>' +
+          '<div class="hero-s"><div><small>Новая коллекция</small><h3>Уютный дом<br>начинается с мелочей</h3><button>Смотреть каталог</button></div><div class="blob"></div><div class="v2"></div><div class="v1"></div></div>' +
+          '<div class="chips"><span class="on" data-f="all">Все</span><span data-f="vase">Вазы и кашпо</span><span data-f="candle">Свечи</span><span data-f="tex">Текстиль</span></div><div class="grid3">' +
+          P.map(function (p) {
+            var g = p[2].split(',');
+            return '<div class="card" data-t="' + p[4] + '"><div class="art" style="background:' + g[0] + '33"><i class="' + p[3] + '" style="--g:linear-gradient(160deg,' + g[0] + ',' + g[1] + ')"></i></div><div><b>' + p[0] + '</b><div class="pr">' + p[1] + ' BYN</div><button class="add">В корзину</button></div></div>';
+          }).join('') + '</div><div class="drawer"><div class="dh"><b>Ваша корзина</b><button class="dx">×</button></div><div class="dl"></div><div class="dt"><span>Итого</span><b class="ds">0 BYN</b></div><button class="dgo">Оформить заказ</button></div><div class="toast"></div></div>';
+      },
+      init: function (r) {
+        var em = r.querySelector('.cart em'), items = [], dr = r.querySelector('.drawer');
+        function render() {
+          var cnt = 0, sum = 0;
+          items.forEach(function (x) { cnt += x.q; sum += x.q * x.p; });
+          em.textContent = cnt; em.classList.add('pop'); setTimeout(function () { em.classList.remove('pop'); }, 300);
+          r.querySelector('.ds').textContent = sum + ' BYN';
+          r.querySelector('.dl').innerHTML = items.length ? items.map(function (x, i) { return '<div class="di"><span>' + x.n + '</span><span class="qt"><button data-i="' + i + '" data-d="-1">−</button>' + x.q + '<button data-i="' + i + '" data-d="1">+</button></span><b>' + x.q * x.p + ' BYN</b></div>'; }).join('') : '<p class="em0">Корзина пока пуста</p>';
+          $$(r, '.qt button').forEach(function (b) { b.addEventListener('click', function () { var it = items[+b.dataset.i]; it.q += +b.dataset.d; if (it.q <= 0) items.splice(+b.dataset.i, 1); render(); }); });
+        }
+        $$(r, '.add').forEach(function (b) { b.addEventListener('click', function () {
+          var c = b.closest('.card'), n = c.querySelector('b').textContent, p = parseInt(c.querySelector('.pr').textContent, 10);
+          var f = items.filter(function (x) { return x.n === n; })[0]; if (f) f.q++; else items.push({ n: n, p: p, q: 1 });
+          render(); toast(r, 'Добавлено в корзину');
+        }); });
+        r.querySelector('.cart').addEventListener('click', function () { dr.classList.toggle('on'); });
+        r.querySelector('.dx').addEventListener('click', function () { dr.classList.remove('on'); });
+        r.querySelector('.dgo').addEventListener('click', function () { if (!items.length) { toast(r, 'Добавьте товар в корзину'); return; } items = []; render(); dr.classList.remove('on'); toast(r, 'Заказ отправлен владельцу в Telegram'); });
+        render();
+        $$(r, '.chips span').forEach(function (c) { c.addEventListener('click', function () {
+          $$(r, '.chips span').forEach(function (x) { x.classList.toggle('on', x === c); });
+          $$(r, '.card').forEach(function (k) { k.classList.toggle('hide', c.dataset.f !== 'all' && k.dataset.t !== c.dataset.f); });
+        }); });
+      }
+    },
+
+    qrmenu: {
+      title: 'QR-меню для кафе', url: 'zerno.by/menu',
+      html: function () {
+        return '<div class="sx qrm"><div class="left"><small>QR-меню</small><h3>Гость сканирует код на столе и видит меню</h3><p>Без приложений и печати новых меню. Цены и позиции меняете сами за минуту.</p><div class="qr">' + qrSvg() + '</div></div>' +
+          '<div class="phone"><div class="scr"><div class="top"><b>Кофейня «Зерно»</b><span>Столик 5 · работаем до 22:00</span></div><div class="tabs"><button class="on" data-c="0">Кофе</button><button data-c="1">Десерты</button><button data-c="2">Завтраки</button></div><div class="list"></div><div class="bar"><span>Заказ: <b class="cnt">0</b></span><span class="sum">0 BYN</span></div></div></div></div>';
+      },
+      init: function (r) {
+        var M = [[['Эспрессо', '2 BYN', '#6b4a35'], ['Капучино', '5 BYN', '#b58863'], ['Флэт уайт', '6 BYN', '#9a6b4a'], ['Раф «Лаванда»', '7 BYN', '#a38bb8']], [['Чизкейк', '9 BYN', '#f0c9a0'], ['Медовик', '7 BYN', '#e0a96d'], ['Круассан', '5 BYN', '#d9a35b']], [['Сырники', '11 BYN', '#f3d9a4'], ['Овсянка с ягодами', '8 BYN', '#c9a0b4'], ['Тост с авокадо', '12 BYN', '#9cc08f']]];
+        var list = r.querySelector('.list'), cnt = 0, sum = 0, q = {}, P = {};
+        function draw(i) {
+          list.innerHTML = M[i].map(function (m, k) { return '<div class="it" style="animation-delay:' + k * 70 + 'ms"><span class="dot" style="--c:' + m[2] + '"></span><div>' + m[0] + '<small>' + m[1] + '</small></div><span class="qc"><button class="mn" data-n="' + m[0] + '" data-p="' + parseInt(m[1], 10) + '">−</button><i>' + (q[m[0]] || 0) + '</i><button class="pl" data-n="' + m[0] + '" data-p="' + parseInt(m[1], 10) + '">+</button></span></div>'; }).join('');
+          function upd() { cnt = 0; sum = 0; Object.keys(q).forEach(function (k) { cnt += q[k]; sum += q[k] * P[k]; }); r.querySelector('.cnt').textContent = cnt; r.querySelector('.sum').textContent = sum + ' BYN'; }
+          $$(list, '.pl,.mn').forEach(function (b) { b.addEventListener('click', function () {
+            var k = b.dataset.n; P[k] = +b.dataset.p; q[k] = Math.max(0, (q[k] || 0) + (b.classList.contains('pl') ? 1 : -1));
+            b.parentNode.querySelector('i').textContent = q[k]; upd();
+          }); });
+        }
+        $$(r, '.tabs button').forEach(function (b) { b.addEventListener('click', function () { $$(r, '.tabs button').forEach(function (x) { x.classList.toggle('on', x === b); }); draw(+b.dataset.c); }); });
+        draw(0);
+      }
+    },
+
+    calc: {
+      title: 'Калькулятор стоимости на сайте', url: 'remontpro.by/raschet',
+      html: function () {
+        return '<div class="sx calc"><div><h3>Рассчитайте ремонт за минуту</h3><p class="sub">Ответьте на три вопроса и сразу увидите цену.</p>' +
+          '<div class="lab">Объект</div><div class="opts" data-k="type"><button class="on" data-v="1">Квартира</button><button data-v="1.15">Дом</button><button data-v="0.9">Офис</button></div>' +
+          '<div class="lab">Площадь: <span class="area">60 м²</span></div><input type="range" min="20" max="200" value="60">' +
+          '<div class="lab">Уровень ремонта</div><div class="opts" data-k="lvl"><button class="on" data-v="110">Косметический</button><button data-v="260">Капитальный</button><button data-v="420">Дизайнерский</button></div></div>' +
+          '<div class="res"><small>Ориентировочная стоимость</small><div class="sum">0 <span>BYN</span></div><ul><li>Материалы и работа</li><li>Срок от 2 недель</li><li>Смета бесплатно</li></ul><button class="cta">Получить точный расчёт</button><div class="sent">Заявка отправлена. Менеджер получил в Telegram: «Квартира, <b class="d1"></b>, ремонт».</div></div></div>';
+      },
+      init: function (r) {
+        var type = 1, lvl = 110, area = 60, out = r.querySelector('.sum'), cur = 0;
+        function calc() {
+          var v = Math.round(area * lvl * type / 10) * 10, t0 = cur, t1 = v, st = performance.now();
+          (function step(t) { var p = Math.min(1, (t - st) / 500); cur = Math.round(t0 + (t1 - t0) * p); out.innerHTML = cur.toLocaleString('ru-RU').replace(/ /g, ' ') + ' <span>BYN</span>'; if (p < 1) requestAnimationFrame(step); })(st);
+        }
+        $$(r, '.opts').forEach(function (g) { $$(g, 'button').forEach(function (b) { b.addEventListener('click', function () {
+          $$(g, 'button').forEach(function (x) { x.classList.toggle('on', x === b); });
+          if (g.dataset.k === 'type') type = +b.dataset.v; else lvl = +b.dataset.v; calc();
+        }); }); });
+        r.querySelector('input').addEventListener('input', function (e) { area = +e.target.value; r.querySelector('.area').textContent = area + ' м²'; calc(); });
+        r.querySelector('.cta').addEventListener('click', function () { r.querySelector('.d1').textContent = area + ' м²'; r.querySelector('.sent').classList.add('on'); });
+        calc();
+      }
+    },
+
+    flow: {
+      title: 'Автоматизация заявок', url: 'заявки → таблица → Telegram',
+      html: function () {
+        return '<div class="sx auto2"><h3>Заявка сама попадает в таблицу и вам в Telegram</h3><p class="sub">Больше никаких блокнотов и потерянных сообщений.</p>' +
+          '<div class="flow"><div class="nd" data-i="0"><i>🌐</i>Форма на сайте</div><div class="nd" data-i="1"><i>🤖</i>Бот проверяет</div><div class="nd" data-i="2"><i>📊</i>Строка в таблице</div><div class="nd" data-i="3"><i>📱</i>Вам в Telegram</div><span class="pkt"></span></div>' +
+          '<div class="sheet"><div class="sh-h"><span>№</span><span>Клиент</span><span>Услуга</span><span>Телефон</span><span>Статус</span></div><div class="rows"></div></div><div class="tgn"><b>Новая заявка</b><span class="tx1"></span></div></div>';
+      },
+      init: function (r) {
+        var D = [['Анна К.', 'Маникюр', '+375 29 ···-12-45'], ['Игорь С.', 'Замена масла', '+375 44 ···-80-02'], ['Мария Л.', 'Сайт-визитка', '+375 33 ···-41-17'], ['Олег П.', 'Доставка кофе', '+375 29 ···-65-90'], ['Вера Н.', 'Консультация', '+375 25 ···-30-76']];
+        var rows = r.querySelector('.rows'), pkt = r.querySelector('.pkt'), nodes = $$(r, '.nd'), tgn = r.querySelector('.tgn'), n = 3, k = 0, busy = false;
+        function row(i, fresh) { var d = D[i % D.length]; var e = document.createElement('div'); e.className = 'sh-r' + (fresh ? ' new' : ''); e.innerHTML = '<span>' + (100 + n) + '</span><span>' + d[0] + '</span><span>' + d[1] + '</span><span>' + d[2] + '</span><span class="st">Новая</span>'; return e; }
+        for (var i = 0; i < 3; i++) { n = i + 1; rows.appendChild(row(i, false)); }
+        n = 3;
+        function run() {
+          if (!r.isConnected) { clearInterval(h); return; }
+          if (busy) return; busy = true;
+          var flow = r.querySelector('.flow'), w = flow.clientWidth, x = 0;
+          nodes.forEach(function (nd) { nd.classList.remove('hot'); });
+          var steps = [0, 1, 2, 3], j = 0;
+          (function go() {
+            if (!r.isConnected) return;
+            if (j >= steps.length) { busy = false; return; }
+            var nd = nodes[steps[j]]; nodes.forEach(function (q) { q.classList.remove('hot'); }); nd.classList.add('hot');
+            pkt.style.transition = 'left .5s'; pkt.style.left = (nd.offsetLeft + nd.offsetWidth / 2 - 6) + 'px';
+            if (steps[j] === 2) { n++; var e = row(n, true); rows.appendChild(e); if (rows.children.length > 4) rows.removeChild(rows.firstChild); setTimeout(function () { e.classList.remove('new'); }, 1500); }
+            if (steps[j] === 3) { var d = D[n % D.length]; r.querySelector('.tx1').textContent = d[0] + ' · ' + d[1]; tgn.classList.add('on'); setTimeout(function () { tgn.classList.remove('on'); }, 2000); }
+            j++; setTimeout(go, 750);
+          })();
+        }
+        var h = setInterval(run, 4600); setTimeout(run, 400);
+      }
+    },
+
+    crm: {
+      title: 'Учёт клиентов и продаж в таблице', url: 'клиенты.xlsx',
+      html: function () {
+        var R = [['Анна Козлова', 'Маникюр, 3 раза', 'Новый', '45 BYN'], ['ООО «Стройдом»', 'Сайт и бот', 'В работе', '380 BYN'], ['Игорь Сидоров', 'Замена масла', 'Оплачен', '60 BYN'], ['Кафе «Лето»', 'QR-меню', 'В работе', '120 BYN'], ['Мария Лис', 'Логотип', 'Оплачен', '60 BYN'], ['ИП Орлов', 'Автоматизация', 'Новый', '90 BYN'], ['Студия «Ритм»', 'Презентация', 'Оплачен', '70 BYN']];
+        var cls = { 'Новый': 'n', 'В работе': 'w', 'Оплачен': 'd' };
+        return '<div class="sx crm"><div class="top"><h3>Клиенты и продажи</h3><small style="color:#6c7a90">обновляется автоматически</small></div>' +
+          '<div class="kpi"><div class="k"><small>Всего клиентов</small><b data-n="7">0</b></div><div class="k"><small>Новых</small><b data-n="2">0</b></div><div class="k"><small>В работе</small><b data-n="2">0</b></div><div class="k"><small>Выручка, BYN</small><b data-n="190">0</b></div></div>' +
+          '<div class="filters"><button class="on" data-s="">Все</button><button data-s="Новый">Новые</button><button data-s="В работе">В работе</button><button data-s="Оплачен">Оплачены</button></div>' +
+          '<div class="tbl"><div class="tr th"><span>Клиент</span><span>Услуга</span><span>Статус</span><span>Сумма</span><span>Дата</span></div>' +
+          R.map(function (x, i) { return '<div class="tr" data-s="' + x[2] + '"><span>' + x[0] + '</span><span>' + x[1] + '</span><span class="chip ' + cls[x[2]] + '">' + x[2] + '</span><span>' + x[3] + '</span><span>' + (10 + i) + '.11</span></div>'; }).join('') + '</div></div>';
+      },
+      init: function (r) {
+        $$(r, '.k b').forEach(function (b) { var end = +b.dataset.n, st = performance.now(); (function s(t) { var p = Math.min(1, (t - st) / 1100); b.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(s); })(st); });
+        $$(r, '.filters button').forEach(function (b) { b.addEventListener('click', function () {
+          $$(r, '.filters button').forEach(function (x) { x.classList.toggle('on', x === b); });
+          $$(r, '.tr[data-s]').forEach(function (t) { t.classList.toggle('hide', !!b.dataset.s && t.dataset.s !== b.dataset.s); });
+        }); });
+      }
+    },
+
+    brand: {
+      title: 'Логотип и фирменный стиль', url: 'фирстиль · пример',
+      html: function () {
+        return '<div class="sx brand"><div class="tabs"><button class="on" data-b="0">Мягкий</button><button data-b="1">Строгий</button><button data-b="2">Яркий</button></div>' +
+          '<div class="board"><div class="cell main"><div><div class="mark">Л</div><div class="nm">Лето</div><div class="tg2">студия красоты</div></div></div>' +
+          '<div class="cell pal"></div><div class="cell card2"><div class="bc"><b>Анна Лето</b><small>Мастер маникюра<br>+375 29 000-00-00</small></div></div></div></div>';
+      },
+      init: function (r) {
+        var B = [{ bg: '#f6e7dc', fg: '#3b2a22', ac: '#d9805f', ff: "'Playfair Display', serif", pal: ['#f6e7dc', '#d9805f', '#8a5a44', '#3b2a22'] },
+                 { bg: '#14213d', fg: '#f4f1ea', ac: '#e0b050', ff: "'Oswald', sans-serif", pal: ['#14213d', '#e0b050', '#f4f1ea', '#5b6b8c'] },
+                 { bg: '#ff6b3d', fg: '#1a0f05', ac: '#fff3e0', ff: "'Unbounded', sans-serif", pal: ['#ff6b3d', '#ffb23d', '#fff3e0', '#38e1c3'] }];
+        var host = r.querySelector('.brand');
+        function apply(i) {
+          var b = B[i];
+          host.style.setProperty('--bg', b.bg); host.style.setProperty('--fg', b.fg); host.style.setProperty('--ac', b.ac); host.style.setProperty('--ff', b.ff);
+          r.querySelector('.pal').innerHTML = b.pal.map(function (c) { return '<i style="--c:' + c + '">' + c + '</i>'; }).join('');
+          var m = r.querySelector('.mark'); m.style.animation = 'none'; void m.offsetWidth; m.style.animation = '';
+        }
+        $$(r, '.tabs button').forEach(function (b) { b.addEventListener('click', function () { $$(r, '.tabs button').forEach(function (x) { x.classList.toggle('on', x === b); }); apply(+b.dataset.b); }); });
+        apply(0);
+      }
+    },
+
+    social: {
+      title: 'Оформление Instagram и Telegram', url: 'instagram · telegram',
+      html: function () {
+        var T = [['Новинка недели', '#ff6b3d', '#fff'], ['−20% на маникюр', '#1d2b26', '#ffb23d'], ['До / после', '#f6e7dc', '#3b2a22'], ['Запись открыта', '#ffb23d', '#1a0f05'], ['Отзывы клиентов', '#2f5d50', '#fff'], ['Акция выходного дня', '#3b2a22', '#f6e7dc'], ['Советы мастера', '#f6e7dc', '#ff6b3d'], ['Наши работы', '#ff6b3d', '#1a0f05'], ['Подарочные сертификаты', '#1d2b26', '#fff']];
+        return '<div class="sx social"><div class="ig"><div class="prof"><div class="av">Л</div><div><b>studio.leto</b><small>Студия красоты</small></div></div>' +
+          '<div class="stats"><span><b>86</b> постов</span><span><b>1,2 тыс.</b> подписчиков</span></div><div class="hl"><i>💅</i><i>💰</i><i>⭐</i><i>📍</i></div><div class="gr">' +
+          T.map(function (t, i) { return '<div style="--b:' + t[1] + ';--t:' + t[2] + ';animation-delay:' + i * 60 + 'ms">' + t[0] + '</div>'; }).join('') + '</div></div>' +
+          '<div class="tgc"><div class="tgh"><div class="av">Л</div><div><b>Студия «Лето»</b><br><small style="color:#8a9db0">канал · 540 подписчиков</small></div></div><div class="pin">📌 Запись онлайн и прайс: через бота @leto_bot</div>' +
+          '<div class="post"><div class="im">Новинка недели</div><p>Летнее покрытие «Персик» уже в салоне. Запишитесь на этой неделе и получите уход для рук в подарок.</p></div></div></div>';
+      },
+      init: function () {}
+    },
+
+    print: {
+      title: 'Визитки и листовки', url: 'печатные материалы',
+      html: function () {
+        return '<div class="sx print"><h3>Визитка и листовка в едином стиле</h3><p class="sub">Нажмите на визитку, чтобы перевернуть.</p><div class="stage"><div class="flip"><div class="fr"><b>Лето</b><small>студия красоты<br>Беларусь</small></div><div class="bk"><b>Анна Лето</b><small>Мастер маникюра<br>+375 29 000-00-00<br>@studio_leto</small></div></div>' +
+          '<div class="fly"><div class="hd">Лето</div><b>Прайс на маникюр</b><ul><li><span>Классический</span><span>35</span></li><li><span>С покрытием</span><span>45</span></li><li><span>Дизайн</span><span>+10</span></li><li><span>Уход</span><span>15</span></li></ul><div class="qrs">Запись: наведите камеру на QR на карточке</div></div></div></div>';
+      },
+      init: function (r) { var f = r.querySelector('.flip'); f.addEventListener('click', function () { f.classList.toggle('on'); }); setTimeout(function () { if (r.isConnected) f.classList.add('on'); }, 2200); setTimeout(function () { if (r.isConnected) f.classList.remove('on'); }, 4800); }
+    },
+
+    deck: {
+      title: 'Презентация и коммерческое предложение', url: 'презентация · пример',
+      html: function () {
+        return '<div class="sx deck"><div class="sl">' +
+          '<div class="s t1 on"><small>Коммерческое предложение</small><h3>Автоматизация записи для вашего салона</h3><p>Сайт, бот и уведомления. Больше записей без лишних звонков.</p></div>' +
+          '<div class="s"><small>Проблема и решение</small><h3>Клиенты уходят, пока вы заняты</h3><div class="cols"><div><b>1</b>Клиент пишет вечером</div><div><b>2</b>Бот отвечает сразу</div><div><b>3</b>Вы получаете запись</div></div></div>' +
+          '<div class="s"><small>Результат</small><h3>Записей становится больше</h3><div class="bars"><i style="--h:35%"></i><i style="--h:45%;animation-delay:.1s"></i><i style="--h:62%;animation-delay:.2s"></i><i style="--h:78%;animation-delay:.3s"></i><i style="--h:94%;animation-delay:.4s"></i></div></div>' +
+          '<div class="s"><small>Стоимость</small><h3>от 380 BYN</h3><p>Сайт с анимацией и бот записи. Первый макет бесплатно, срок 5–7 дней.</p></div>' +
+          '<div class="nav"><button class="pv">←</button><span class="ct">1 / 4</span><button class="nx">→</button></div></div></div>';
+      },
+      init: function (r) {
+        var s = $$(r, '.s'), i = 0;
+        function go(n) { i = (n + s.length) % s.length; s.forEach(function (x, k) { x.classList.toggle('on', k === i); }); r.querySelector('.ct').textContent = (i + 1) + ' / ' + s.length; }
+        r.querySelector('.nx').addEventListener('click', function () { go(i + 1); });
+        r.querySelector('.pv').addEventListener('click', function () { go(i - 1); });
+        var h = setInterval(function () { if (!r.isConnected) clearInterval(h); else go(i + 1); }, 3600);
+        r.addEventListener('click', function () { clearInterval(h); });
+      }
+    },
+
+    fix: {
+      title: 'Доработка существующего сайта', url: 'до и после',
+      html: function () {
+        return '<div class="sx ba"><div class="cmp"><div class="pane old"><h4>АвтоСервис</h4><p><u>Главная</u><u>Услуги</u><u>Контакты</u></p><div class="bx">[фото не загрузилось]</div><p>Мы делаем ремонт автомобилей уже много лет. Звоните нам по телефону указанному ниже. Цены уточняйте у администратора. Сайт работает медленно и плохо выглядит на телефоне.</p></div>' +
+          '<div class="pane new"><div class="nv"><b>АвтоСервис 24</b><span>Услуги · Цены · Контакты</span></div><h4>Ремонт без сюрпризов</h4><p>Диагностика за 30 минут и честная цена до начала работ.</p><span class="bt">Записаться онлайн</span></div>' +
+          '<span class="lab l">ДО</span><span class="lab r">ПОСЛЕ</span><div class="hdl"></div><input type="range" min="5" max="95" value="50"></div>' +
+          '<div class="fx"><span>Современный дизайн</span><span>Удобно на телефоне</span><span>Быстрая загрузка</span><span>Форма записи</span><span>Понятные цены</span></div></div>';
+      },
+      init: function (r) {
+        var c = r.querySelector('.cmp'), inp = r.querySelector('input');
+        function set(v) { c.style.setProperty('--p', v + '%'); }
+        inp.addEventListener('input', function () { set(inp.value); });
+        var t0 = performance.now(), moved = false; inp.addEventListener('pointerdown', function () { moved = true; });
+        (function anim(t) { if (moved || !r.isConnected) return; var v = 50 + Math.sin((t - t0) / 900) * 38; set(v); inp.value = v; requestAnimationFrame(anim); })(t0);
+      }
+    },
+
+    texts: {
+      title: 'Тексты для сайта и бота', url: 'до и после',
+      html: function () {
+        return '<div class="sx tx"><div class="hd"><h3>Тексты, которые продают</h3><div class="sw"><button class="on" data-m="bad">Было</button><button data-m="good">Стало</button></div></div><div class="pg bad"><div></div></div><p class="note">Клининговая компания: тот же сайт, другие слова.</p></div>';
+      },
+      init: function (r) {
+        var V = { bad: '<h4>Клининговая компания</h4><p>Мы занимаемся уборкой помещений уже давно. Предоставляем различные услуги по клинингу. Работаем качественно и быстро. Цены доступные, обращайтесь по телефону.</p><ul><li>уборка квартир</li><li>уборка офисов</li></ul>',
+                  good: '<div class="tag">Уборка квартир</div><h4>Чистая квартира за 3 часа. Вы вернётесь в сияющий дом</h4><p>Приедем в удобное время со своей химией и оборудованием. Если останется хоть одно пятно, вернёмся и уберём бесплатно.</p><ul><li>Генеральная уборка от 60 BYN</li><li>Уборка после ремонта от 90 BYN</li><li>Офис от 40 BYN за визит</li></ul><span class="bt">Рассчитать цену за минуту</span>' };
+        var pg = r.querySelector('.pg');
+        function set(m) { pg.className = 'pg ' + m; pg.innerHTML = '<div>' + V[m] + '</div>'; $$(r, '.sw button').forEach(function (b) { b.classList.toggle('on', b.dataset.m === m); }); }
+        $$(r, '.sw button').forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.m); }); });
+        set('bad'); var h = setTimeout(function () { if (r.isConnected) set('good'); }, 2400);
+        r.addEventListener('click', function () { clearTimeout(h); });
+      }
+    }
+  };
+
+  BOTS.remind = {
+    name: 'Клиника «Улыбка»', letter: 'У', sub: 'бот напоминаний',
+    about: 'Бот сам напоминает пациентам о визите, а они подтверждают, переносят или отменяют его в два нажатия. Пустых мест в расписании становится меньше.',
+    feats: ['Напоминание за сутки до приёма', 'Подтверждение, перенос или отмена в чате', 'Администратор видит ответ сразу', 'Рассылки об акциях и новостях'],
+    init: 'start', auto: [0, 0],
+    steps: {
+      start: { say: ['Добрый день! Напоминаем: завтра в 11:00 вас ждёт приём в клинике «Улыбка».', 'Подтвердите, пожалуйста, визит.'], kb: [[['Подтверждаю', 'ok']], [['Перенести', 'move'], ['Отменить', 'cancel']]] },
+      ok: { say: ['Спасибо! Ждём вас завтра в 11:00.', 'Адрес: ул. Советская, 10. Приходите за 10 минут.'], notify: ['Визит подтверждён', 'Завтра, 11:00', 'Пациент: Анна К.'], kb: [[['В начало', 'start']]] },
+      move: { say: ['Когда вам удобно?'], kb: [[['Завтра 15:00', 'moved', 't=завтра в 15:00'], ['Пятница 10:00', 'moved', 't=в пятницу в 10:00']]] },
+      moved: { say: ['Перенёс визит {t}. Напомню за сутки.'], notify: ['Визит перенесён', '{t}', 'Пациент: Анна К.'], kb: [[['В начало', 'start']]] },
+      cancel: { say: ['Визит отменён. Если захотите записаться снова, нажмите кнопку.'], notify: ['Визит отменён', 'Освободилось время завтра в 11:00', 'Пациент: Анна К.'], kb: [[['Записаться снова', 'move'], ['В начало', 'start']]] }
+    }
+  };
+
+  function fitShow(w) {
+    var f = w.firstChild, s = Math.min(1.3, w.clientWidth / 900);
+    f.style.transform = 'scale(' + s + ')';
+    w.style.height = (620 * s) + 'px';
+  }
+  function mountShow(host, key) {
+    var d = SHOWS[key];
+    var w = document.createElement('div');
+    w.className = 'sxw';
+    w.innerHTML = '<div class="sx-fit">' + d.html() + '</div>';
+    host.appendChild(w);
+    var fit = w.firstChild;
+    d.init(fit);
+    fitShow(w);
+    if ('ResizeObserver' in window) { var ro = new ResizeObserver(function () { fitShow(w); }); ro.observe(w); }
+    else window.addEventListener('resize', function () { fitShow(w); });
+    return w;
+  }
+
   /* ---------- tile previews ---------- */
   var tileBots = [];
   document.querySelectorAll('[data-prev]').forEach(function (p) {
     p.querySelector('.frame').appendChild(cloneTpl(PREV[p.dataset.prev]));
   });
+  document.querySelectorAll('[data-show]').forEach(function (p) { mountShow(p, p.dataset.show); });
   document.querySelectorAll('[data-botprev]').forEach(function (p) {
     var key = p.dataset.botprev;
     tileBots.push({ el: p, bot: createBot(p, BOTS[key], { autoplay: !reduce }) });
@@ -967,6 +1680,9 @@ html, body { overflow-x: clip; }
       win.querySelector('.frame').appendChild(cloneTpl(d.tpl));
       ovBody.appendChild(win);
       wireMock(win);
+    } else if (d.kind === 'show') {
+      ovTitle.textContent = SHOWS[d.show].title;
+      mountShow(ovBody, d.show);
     } else {
       var def = BOTS[d.bot];
       var stage = document.createElement('div');
