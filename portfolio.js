@@ -25,7 +25,7 @@ function openDemo(key, fromLink) {
   }
   current = key;
   title.textContent = names[key];
-  dialog.querySelector('.close').firstChild.textContent = key === 'salon' ? 'В портфолио ' : 'Закрыть ';
+  dialog.querySelector('.close').firstChild.textContent = 'В портфолио ';
   reset();
   if (!fromLink) history.pushState(null, '', '#demo-' + key);
   render();
@@ -109,7 +109,7 @@ const galleryPhotos = [
 function studio() {
   return '<div class="salon studio inner">' +
     '<header class="studio-nav"><a class="studio-brand" href="#studio-home">Лето</a><nav aria-label="Разделы студии"><a href="#studio-services">Услуги</a><a href="#studio-gallery">Работы</a><a href="#studio-team">Команда</a><a href="#studio-visit">Посещение</a></nav><a class="studio-cta" href="#studio-book">Записаться</a></header>' +
-    '<section class="studio-hero" id="studio-home"><div><small>Студия красоты «Лето»</small><h3>Время<br><em>для себя</em></h3><p>Маникюр, брови и уход за волосами. Выберите процедуру и удобное время.</p><a class="studio-cta" href="#studio-services">Выбрать услугу</a></div><img src="assets/salon.jpg" alt="Маникюр с розовым покрытием"></section>' +
+    '<section class="studio-hero" id="studio-home"><div class="studio-feature-copy"><h3>Уход<br>в деталях.</h3><p>Студия маникюра, бровей и ухода за волосами.</p><a class="studio-cta" href="#studio-book">Записаться на визит</a></div><figure><img src="assets/artist.jpg" alt="Мастер наносит красный лак"><figcaption>Маникюр с покрытием</figcaption></figure></section>' +
     '<section class="studio-section" id="studio-services"><small>Прайс студии</small><h3>Услуги и цены</h3><div class="studio-services">' +
     services.map(([name, price], index) => '<article><h4>' + name + '</h4><p>' + serviceDetails[index][0] + '</p><b>$' + price + ' · ' + serviceDetails[index][1] + '</b>' + button('book-service','Выбрать услугу',index) + '</article>').join('') +
     '</div></section><section class="studio-section" id="studio-gallery"><h3>Работы студии</h3><div class="studio-gallery">' +
@@ -135,10 +135,10 @@ function shop() {
   const total = products.reduce((sum,p,i) => sum + p.price * state.cart[i],0);
   let content;
   if (state.view === 'storefront') {
-    content = '<div class="store-feature"><img src="assets/interior.jpg" alt="Гостиная с натуральным текстилем и предметами декора"><div><small>Коллекция для дома</small><h3 tabindex="-1">Дом,<br>в котором<br>вы — дома.</h3>' + button('catalog','Открыть каталог','','solid') + '</div></div><section class="collections"><h3>Коллекции</h3><div>' +
+    content = '<div class="store-feature"><figure><img src="assets/interior.jpg" alt="Гостиная с натуральным текстилем и предметами декора"></figure><div class="store-feature-copy"><h3 tabindex="-1">Предметы<br>для дома</h3><p>Керамика, мягкий свет и спокойные фактуры.</p>' + button('catalog','Открыть каталог','','solid') + '</div></div><section class="collections"><h3>Коллекции</h3><div>' +
       products.map((p,i) => button('collection','<img src="assets/' + p.image + '.jpg" alt=""><span>' + p.type + '</span>',i)).join('') + '</div></section>';
   } else if (state.view === 'catalog') {
-    content = '<div class="store-intro"><small>Коллекция для дома</small><h3 tabindex="-1">Тихие вещи<br><em>на каждый день</em></h3><p>Керамика, свет и натуральный текстиль.</p></div>' +
+    content = '<div class="store-intro"><small>Коллекция для дома</small><h3 tabindex="-1">Каталог</h3></div>' +
       choices('filter', ['Все', ...products.map(p => p.type)], state.filter) + '<label class="search">Поиск по каталогу<input type="search" id="query" placeholder="Например, свеча"></label><div class="goods">' + (visibleProducts().length ? visibleProducts().map(({product:p,index:i}) =>
       '<article><img src="assets/' + p.image + '.jpg" alt="' + p.name + '"><small>' + p.type + '</small><div class="product-title"><h4>' + p.name + '</h4><b>$' + p.price + '</b></div><p>' + p.detail + '</p>' + button('product', 'О товаре', i) + button('add', state.cart[i] ? 'В корзине · ' + state.cart[i] : 'В корзину', i, state.cart[i] ? 'added' : '') + '</article>').join('') : '<p>По этому запросу товаров нет.</p>') + '</div>';
   } else if (state.view === 'product') {
@@ -174,9 +174,9 @@ function bot() {
     chat += '<div class="bubble">' + q + '</div>';
     if (answers[i]) chat += '<div class="bubble mine">' + answers[i] + '</div>';
   });
-  const receipt = '<div class="brief' + (done ? ' ready' : ' pending-brief') + '"><div class="brief-cover"><img src="assets/' + (answers[1] === 'Магазин' ? 'vase' : answers[1] === 'Услуги' ? 'workshop' : 'salon') + '.jpg" alt=""><small>Карточка владельца</small></div><div class="brief-text"><small>' + (done ? (state.owner || 'Заявка получена · демо') : 'Предпросмотр заявки') + '</small><h4>' + (answers[0] || 'Новая заявка') + '</h4><dl><dt>Сфера</dt><dd>' + (answers[1] || 'Ожидаем ответ') + '</dd><dt>Задача</dt><dd>' + (answers[2] || 'Ожидаем ответ') + '</dd></dl><div class="network-trace"></div>' + (done ? '<div class="buttons owner-actions">' + button('owner', 'В работу', 'В работе') + button('owner', 'Закрыть заявку', 'Закрыта') + '</div>' : '') + '</div></div>';
+  const receipt = '<div class="brief' + (done ? ' ready' : ' pending-brief') + '"><div class="brief-cover"><img src="assets/' + (answers[1] === 'Магазин' ? 'vase' : answers[1] === 'Услуги' ? 'workshop' : 'salon') + '.jpg" alt=""></div><div class="brief-text"><small>' + (done ? (state.owner || 'Заявка получена · демо') : 'Предпросмотр заявки') + '</small><h4>' + (answers[0] || 'Новая заявка') + '</h4><dl><dt>Сфера</dt><dd>' + (answers[1] || 'Ожидаем ответ') + '</dd><dt>Задача</dt><dd>' + (answers[2] || 'Ожидаем ответ') + '</dd></dl><div class="network-trace"></div>' + (done ? '<div class="buttons owner-actions">' + button('owner', 'В работу', 'В работе') + button('owner', 'Закрыть заявку', 'Закрыта') + '</div>' : '') + '</div></div>';
   const routes = questions[0][1].map((label,index) => button('route',label,index,'',label === answers[0])).join('');
-  return '<div class="bot inner"><div class="bot-shell"><header class="bot-console"><div><small>VicDev · Бриф</small><h3>От запроса<br>до заявки</h3></div><div><p>Выберите сценарий и пройдите его со стороны клиента. Карточка владельца обновляется по ходу диалога.</p><div class="choices">' + routes + '</div></div></header><div class="desk"><section class="chat"><div class="chat-head"><i>V</i><div><h3>VicDev · Бриф</h3><small>Чат клиента · ' + answers.length + ' из 3 ответов</small></div></div><div class="messages" role="log" aria-label="История диалога">' + chat + (done ? '<div class="bubble">Готово! Вот как выглядит заявка для владельца.</div>' : '') + '</div><div class="keyboard">' + (done ? button('reset','Заполнить ещё раз') : currentOptions(answers.length).map((x,i)=>button('answer',x,i)).join('')) + (answers.length ? button('edit', 'Изменить последний ответ') : '') + '</div></section><aside><small>Со стороны бизнеса</small><h3>Входящие заявки</h3><p>Ответы клиента собираются в одну карточку.</p>' + receipt + '</aside></div></div></div>';
+  return '<div class="bot inner"><div class="bot-shell"><header class="bot-console"><div><h3>Входящие<br>заявки</h3></div><div><p>Ответьте на вопросы в чате. Справа появится карточка, которую получает владелец.</p>' + (answers.length ? '<div class="choices" aria-label="Сменить сценарий">' + routes + '</div>' : '') + '</div></header><div class="desk"><section class="chat"><div class="chat-head"><i>V</i><div><h3>VicDev · Бриф</h3><small>Чат клиента · ' + answers.length + ' из 3 ответов</small></div></div><div class="messages" role="log" aria-label="История диалога">' + chat + (done ? '<div class="bubble">Готово! Вот как выглядит заявка для владельца.</div>' : '') + '</div><div class="keyboard">' + (done ? button('reset','Заполнить ещё раз') : currentOptions(answers.length).map((x,i)=>button('answer',x,i)).join('')) + (answers.length ? button('edit', 'Изменить последний ответ') : '') + '</div></section><aside><small>Со стороны бизнеса</small><h3>Карточка заявки</h3>' + receipt + '</aside></div></div></div>';
 }
 function render(action, value) {
   const oldScroll = stage.scrollTop;
