@@ -102,3 +102,75 @@ body:has(dialog[open]) { overflow: hidden; }
     to { clip-path: inset(-15% -3%); transform: none; }
   }
 }
+
+/* Dark portfolio and two live previews */
+:root { background:#101217; color:#f2f3ee; --blue:#161922; --rule:#444956; }
+.mast { background:#101217; }
+.mast .wrap { border-color:#444956; }
+.contact { border-color:#8c93a1; }
+.intro {
+  display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:center; gap:clamp(18px,4vw,76px);
+  background:none; box-shadow:none; clip-path:none; padding-block:clamp(56px,9vw,128px); min-height: min(690px, 86svh);
+}
+.intro h1 { font-size:clamp(3.15rem,6.6vw,7rem); line-height:.91; letter-spacing:-.053em; animation:none; }
+.intro h1 em { display:block; font:inherit; color:#c8f46e; }
+.intro .lead { margin-top:26px; font-size:clamp(1.08rem,1.6vw,1.35rem); color:#c0c6ce; max-width:38ch; }
+.hero-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:24px; }
+.hero-actions .primary { border-radius:7px; border:1px solid #c8f46e; background:#c8f46e; }
+.hero-actions .primary:hover { background:#e7ffa9; }
+.interface-scene {
+  --rx:0deg; --ry:0deg;
+  position:relative; isolation:isolate; min-height:clamp(320px,39vw,530px); perspective:950px;
+  background:radial-gradient(ellipse at 65% 44%,#37432d 0,transparent 63%);
+}
+.preview-site,.preview-chat {
+  position:absolute; display:grid; background:#202630; border:1px solid #687485; border-radius:12px; overflow:hidden;
+  box-shadow:0 24px 32px #0008; transition:transform .25s ease-out;
+}
+.preview-site { width:78%; top:10%; left:0; transform:rotateX(var(--rx)) rotateY(calc(-12deg + var(--ry))) rotateZ(-4deg); }
+.preview-chat { width: min(53%,245px); right:0; bottom:7%; transform:rotateX(var(--rx)) rotateY(calc(-8deg + var(--ry))) rotateZ(5deg) translateZ(46px); background:#243334; padding-bottom:10px; }
+.preview-top { display:flex; gap:10px; padding:9px 12px; font-weight:650; font-size:.87rem; }
+.preview-top span { color:#c8f46e; }
+.preview-photo { display:grid; align-items:end; min-height:clamp(150px,21vw,290px); position:relative; isolation:isolate; padding:16px; }
+.preview-photo img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-2; }
+.preview-photo::after { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(0deg,#131719d9,transparent 80%); }
+.preview-photo strong { font-size:clamp(2rem,4.5vw,4.5rem); line-height:.88; }
+.preview-site>a,.preview-chat>a { padding:8px 12px; color:#e2ffae; }
+.preview-chat p { margin:3px 9px 7px; padding:8px; border-radius:6px; background:#354849; }
+.preview-chat>a { margin:2px 9px; border:1px solid #6e8480; border-radius:5px; padding:5px 7px; font-size:.86rem; }
+.case { text-decoration:none; }
+.case-text small,.case-text > b,.prices strong,.steps li::marker,.service-links a { color:#c8f46e; }
+.case-text > span,.demo-note,.desc,.prices p,.steps p,.portfolio-footer { color:#bfc5ce; }
+.service-links { display:flex; flex-wrap:wrap; gap:5px 14px; margin-top:8px; }
+.art-bot img { position:absolute; inset:0; opacity:.52; z-index:-1; }
+.art-bot .packet { box-shadow:6px 7px 0 #1b302c; }
+.enquiry { border:1px solid var(--rule); }
+@media(max-width:800px) {
+  .intro { grid-template-columns:1fr; min-height:auto; padding-block:46px 24px; }
+  .interface-scene { width:min(100%,580px); min-height:clamp(275px,58vw,440px); }
+}
+@media(max-width:420px) {
+  .intro h1 { font-size:clamp(2.34rem,9.5vw,3.05rem); }
+  .hero-actions .primary { padding-inline:10px; font-size:.9rem; }
+  .preview-top { padding:7px 8px; font-size:.78rem; }
+  .preview-chat p { font-size:.86rem; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .preview-site,.preview-chat { transform:none; }
+}
+
+.intro h1 em { font-size:.83em; white-space:nowrap; }
+@media(max-width:600px) {
+  .preview-site { top:4%; }
+  .preview-chat { bottom:0; }
+  .preview-site>a { width:max-content; padding-right:4px; font-size:.8rem; }
+}
+@media(max-width:350px) {
+  .preview-site { width:72%; }
+  .preview-chat { width:54%; }
+}
+@media(prefers-reduced-motion:no-preference) {
+  .preview-site,.preview-chat { animation:preview-in .52s cubic-bezier(.2,.7,.25,1) both; }
+  .preview-chat { animation-delay:.12s; }
+  @keyframes preview-in { from { opacity:0; translate:0 24px; } }
+}

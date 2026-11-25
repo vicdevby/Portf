@@ -3,8 +3,8 @@
 const dialog = document.querySelector('#demo');
 const stage = document.querySelector('#stage');
 const title = document.querySelector('#demo-title');
-const names = { salon: 'Студия «Лето»', shop: 'Магазин «Тихий дом»', bot: 'Бот для заявок' };
-const services = [['Маникюр с покрытием', 15], ['Коррекция бровей', 7], ['Уход за волосами', 15]];
+const names = { sport: 'Спортклуб «Пульс»', shop: 'Магазин «Тихий дом»', bot: 'Бот для заявок' };
+const services = [['Силовая база', 12], ['Функциональная тренировка', 10], ['Мобильность', 9]];
 const products = [
   { name: 'Ваза «Дюна»', type: 'Керамика', price: 48, image: 'vase', detail: 'Скульптурная форма и матовая поверхность.' },
   { name: 'Свеча «Кедр»', type: 'Свечи', price: 22, image: 'candle', detail: 'Тёплый свет в стеклянном подсвечнике.' },
@@ -39,7 +39,7 @@ function closeDemo() {
   trigger?.focus({ preventScroll: true });
 }
 document.querySelectorAll('[data-demo]').forEach(button => {
-  button.addEventListener('click', () => openDemo(button.dataset.demo, false));
+  button.addEventListener('click', event => { event.preventDefault(); openDemo(button.dataset.demo, false); if (button.dataset.route) setBotRoute(Number(button.dataset.route)); });
 });
 function dismiss() {
   history.replaceState(null, '', location.pathname + location.search + previousHash);
@@ -59,7 +59,7 @@ function button(action, label, value = '', style = '', selected) {
 function choices(action, options, active) {
   return '<div class="choices">' + options.map((option, index) => button(action, option, index, '', option === active)).join('') + '</div>';
 }
-const masters = ['Анна', 'Мария'];
+const masters = ['Алексей', 'Мария'];
 const masterServices = [[0,1],[1,2]];
 const days = ['Завтра', 'Послезавтра'];
 const slots = [['11:00', '13:30', '16:00'], ['10:00', '14:00', '18:30']];
@@ -74,54 +74,47 @@ function availableSlots() {
 }
 function booking() {
   const [name, price] = services[state.service];
-  const headings = ['Какой уход выберете?', 'Когда вас ждать?', 'Визит подтверждён'];
-  const stages = ['Услуга', 'Время', 'Запись'];
+  const headings = ['Какую программу выберете?', 'Когда вас ждать?', 'Тренировка выбрана'];
+  const stages = ['Программа', 'Время', 'Запись'];
   let panel;
   if (state.step === 0) {
     panel = '<div class="service-list">' + services.map(([label, cost], i) =>
       button('service', '<span>' + label + '</span><b>$' + cost + '</b>', i, '', i === state.service)).join('') +
       '</div>' + button('next', 'Выбрать время', '', 'solid');
   } else if (state.step === 1) {
-    panel = '<div class="artist"><img src="assets/' + teamProfiles[state.master][3] + '.jpg" alt="Мастер за работой"><span>Ваш мастер<strong>' + masters[state.master] + '</strong></span></div><h4>Мастер</h4>' + '<div class="choices">' + masters.map((master,i) => masterServices[i].includes(state.service) ? button('master',master,i,'',i === state.master) : '').join('') + '</div>' + '<h4>День визита</h4>' +
+    panel = '<div class="artist"><img src="assets/' + teamProfiles[state.master][3] + '.jpg" alt="Тренер на занятии"><span>Ваш тренер<strong>' + masters[state.master] + '</strong></span></div><h4>Тренер</h4>' + '<div class="choices">' + masters.map((master,i) => masterServices[i].includes(state.service) ? button('master',master,i,'',i === state.master) : '').join('') + '</div>' + '<h4>День тренировки</h4>' +
       choices('day', days, state.day) + '<h4>Свободное время</h4>' + choices('time', availableSlots(), state.time) +
       '<div class="buttons">' + button('back', 'Назад') + button('next', state.reschedule ? 'Подтвердить перенос' : 'Подтвердить запись', '', 'solid') + '</div>';
   } else {
-    panel = '<div class="ticket-slot" aria-hidden="true"></div><div class="ticket"><small>Демо-талон</small><strong>' + state.time + '</strong><p>' + state.day + ' · ' + name + '</p><p>' + masters[state.master] + ' · $' + price + '</p></div><p class="fine">Это пример записи. Визит в салоне не бронируется.</p>' + '<div class="buttons">' + button('reschedule', 'Перенести запись') + button('reset', 'Начать заново') + '</div>';
+    panel = '<div class="ticket-slot" aria-hidden="true"></div><div class="ticket"><small>Демо-талон</small><strong>' + state.time + '</strong><p>' + state.day + ' · ' + name + '</p><p>' + masters[state.master] + ' · $' + price + '</p></div><p class="fine">Демонстрационная запись. Место в группе не бронируется.</p>' + '<div class="buttons">' + button('reschedule', 'Перенести запись') + button('reset', 'Начать заново') + '</div>';
   }
   return '<div class="salon-page"><div class="progress">' +
     stages.map((x, i) => '<span class="' + (i <= state.step ? 'filled' : '') + '">' + x + '</span>').join('') + '</div><h3 tabindex="-1">' + headings[state.step] + '</h3>' + panel + '</div>';
 }
 const serviceDetails = [
-  ['Подготовка ногтей, выравнивание и однотонное покрытие.', '75 минут'],
-  ['Подбор формы, коррекция и укладка бровей.', '35 минут'],
-  ['Мытьё, уход по типу волос и лёгкая укладка.', '50 минут']
+  ['Техника базовых движений и работа с весом.', '55 минут'],
+  ['Круговая тренировка на силу и выносливость.', '45 минут'],
+  ['Подвижность суставов, баланс и восстановление.', '40 минут']
 ];
 const teamProfiles = [
-  ['Анна', 'Мастер маникюра и бровей', 'Любит полупрозрачные оттенки, тонкие линии и естественную форму.', 'artist'],
-  ['Мария', 'Мастер по бровям и уходу за волосами', 'Подбирает форму бровей и уход с учётом привычек и особенностей волос.', 'hair']
-];
-const galleryPhotos = [
-  ['Молочный розовый', 'salon', 'Мягкий оттенок и миндалевидная форма.'],
-  ['Красный глянец', 'artist', 'Плотный классический цвет с глянцевым финишем.'],
-  ['Текстура и объём', 'hair', 'Пример лёгкой укладки после ухода.']
+  ['Алексей', 'Силовые и функциональные тренировки', 'Помогает освоить технику базовых движений.', 'gym'],
+  ['Мария', 'Функциональные тренировки и мобильность', 'Подбирает нагрузку под опыт и цели участника.', 'training']
 ];
 
 function studio() {
-  return '<div class="salon studio inner">' +
-    '<header class="studio-nav"><a class="studio-brand" href="#studio-home">Лето</a><nav aria-label="Разделы студии"><a href="#studio-services">Услуги</a><a href="#studio-gallery">Работы</a><a href="#studio-team">Команда</a><a href="#studio-visit">Посещение</a></nav><a class="studio-cta" href="#studio-book">Записаться</a></header>' +
-    '<section class="studio-hero" id="studio-home"><div class="studio-feature-copy"><h3>Уход<br>в деталях.</h3><p>Студия маникюра, бровей и ухода за волосами.</p><a class="studio-cta" href="#studio-book">Записаться на визит</a></div><figure><img src="assets/artist.jpg" alt="Мастер наносит красный лак"><figcaption>Маникюр с покрытием</figcaption></figure></section>' +
-    '<section class="studio-section" id="studio-services"><small>Прайс студии</small><h3>Услуги и цены</h3><div class="studio-services">' +
-    services.map(([name, price], index) => '<article><h4>' + name + '</h4><p>' + serviceDetails[index][0] + '</p><b>$' + price + ' · ' + serviceDetails[index][1] + '</b>' + button('book-service','Выбрать услугу',index) + '</article>').join('') +
-    '</div></section><section class="studio-section" id="studio-gallery"><h3>Работы студии</h3><div class="studio-gallery">' +
-    galleryPhotos.map(([label, photo], index) => button('photo','<img src="assets/' + photo + '.jpg" loading="lazy" alt=""><span>' + label + '</span>',index)).join('') +
-    '</div><figure class="studio-photo" hidden></figure></section>' +
-    '<section class="studio-section" id="studio-team"><h3>Команда</h3><div class="studio-team">' +
-    teamProfiles.map(([name, role, bio, photo], index) => '<article><img src="assets/' + photo + '.jpg" alt="" loading="lazy"><div><h4>' + name + '</h4><b>' + role + '</b><p>' + bio + '</p>' + button('book-master','Записаться к мастеру',index) + '</div></article>').join('') +
-    '</div></section><section class="studio-section studio-visit" id="studio-visit"><div><small>О студии</small><h3>Как проходит визит</h3><p>На первом визите мастер уточнит пожелания, поможет выбрать форму и оттенок и расскажет об уходе после процедуры.</p></div><div><h4>Часы работы</h4><p>Ежедневно с 09:00 до 21:00</p><p>После выбора процедуры сайт покажет свободные окна мастера.</p><a class="studio-cta" href="#studio-book">Подобрать время</a></div></section>' +
-    '<section class="studio-section studio-book" id="studio-book"><div><small>Онлайн-запись</small><h3>Ваш визит в «Лето»</h3><p>Выберите процедуру, мастера и время. После подтверждения появится талон.</p></div><div id="booking">' + booking() + '</div></section>' +
-    '<footer class="studio-footer">«Лето» · демонстрационный сайт студии красоты</footer></div>';
+  const timetable = days.map((day, index) => '<article><h4>' + day + '</h4>' +
+    slots[index].map((time, slot) => button('book-slot', time, index * 3 + slot)).join('') + '</article>').join('');
+  return '<div class="sport studio inner">' +
+    '<header class="studio-nav"><a class="studio-brand" href="#studio-home">ПУЛЬС</a><nav aria-label="Разделы клуба"><a href="#studio-services">Программы</a><a href="#studio-schedule">Расписание</a><a href="#studio-team">Тренеры</a></nav><a class="studio-cta" href="#studio-book">Записаться</a></header>' +
+    '<section class="studio-hero" id="studio-home"><div class="studio-feature-copy"><h3>Тренируйся<br>в своём ритме.</h3><p>Силовые, функциональные и восстановительные тренировки в небольших группах.</p><a class="studio-cta" href="#studio-schedule">Смотреть расписание</a></div><figure><img src="assets/gym.jpg" alt="Спортсмен тренируется со штангой"></figure></section>' +
+    '<section class="studio-section" id="studio-services"><h3>Программы тренировок</h3><div class="studio-services">' +
+    services.map(([name, price], index) => '<article><h4>' + name + '</h4><p>' + serviceDetails[index][0] + '</p><b>$' + price + ' · ' + serviceDetails[index][1] + '</b>' + button('book-service','Выбрать программу',index) + '</article>').join('') +
+    '</div></section><section class="studio-section" id="studio-schedule"><h3>Расписание</h3><p>Выберите время. Подходящую программу и тренера можно уточнить при записи.</p><div class="timetable">' + timetable + '</div></section>' +
+    '<section class="studio-section" id="studio-team"><h3>Тренеры</h3><div class="studio-team">' +
+    teamProfiles.map(([name, role, bio, photo], index) => '<article><img src="assets/' + photo + '.jpg" alt="" loading="lazy"><div><h4>' + name + '</h4><b>' + role + '</b><p>' + bio + '</p>' + button('book-master','Записаться к тренеру',index) + '</div></article>').join('') +
+    '</div></section><section class="studio-section studio-book" id="studio-book"><div><small>Онлайн-запись</small><h3>Первая тренировка</h3><p>Выберите программу, тренера и время. После подтверждения появится талон.</p></div><div id="booking">' + booking() + '</div></section>' +
+    '<footer class="studio-footer">«Пульс» · демонстрационный сайт спортклуба</footer></div>';
 }
-
 function scrollStudio(id) {
   stage.querySelector(id)?.scrollIntoView({block:'start', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
 }
@@ -154,17 +147,23 @@ function shop() {
   return '<div class="store inner"><div class="store-wrap"><div class="store-head">' + button('storefront','Тихий дом','','store-brand') + '<div class="store-nav">' + button('catalog','Каталог') + (state.view === 'done' ? '' : button('cart','Корзина · ' + count)) + '</div></div>' + content + '<footer class="store-footer">«Тихий дом» · демонстрационный магазин</footer></div></div>';
 }
 const questions = [
-  ['Что хотите сделать?', ['Сайт для бизнеса','Telegram-бот','Сайт и бот']],
-  ['Для какой сферы?', ['Студия красоты','Магазин','Услуги']],
-  ['Что должен уметь проект?', ['Принимать записи','Собирать заказы','Отвечать на вопросы']]
+  ['Какая техника сломалась?', ['Стиральная машина','Холодильник','Посудомоечная машина']],
+  ['Что произошло?'],
+  ['В каком районе нужен выезд?', ['Центр','Север','Юг']],
+  ['Когда удобно принять мастера?', ['Сегодня вечером','Завтра утром','Согласовать время']]
 ];
-const goals = [
-  ['Показать услуги','Принимать записи','Собирать запросы'],
-  ['Отвечать на вопросы','Собирать заказы','Напоминать о визитах'],
-  ['Запись через сайт','Заказы через каталог','Единые заявки']
+const symptoms = [
+  ['Не сливает воду','Не включается','Сильно шумит'],
+  ['Не охлаждает','Подтекает','Сильно шумит'],
+  ['Не набирает воду','Не сливает воду','Показывает ошибку']
 ];
+function setBotRoute(index) {
+  state.answers = [questions[0][1][index]];
+  state.owner = '';
+  render('route', String(index));
+}
 function currentOptions(index) {
-  return index === 2 ? goals[questions[0][1].indexOf(state.answers[0])] : questions[index][1];
+  return index === 1 ? symptoms[questions[0][1].indexOf(state.answers[0])] : questions[index][1];
 }
 function bot() {
   const answers = state.answers;
@@ -174,19 +173,23 @@ function bot() {
     chat += '<div class="bubble">' + q + '</div>';
     if (answers[i]) chat += '<div class="bubble mine">' + answers[i] + '</div>';
   });
-  const receipt = '<div class="brief' + (done ? ' ready' : ' pending-brief') + '"><div class="brief-cover"><img src="assets/' + (answers[1] === 'Магазин' ? 'vase' : answers[1] === 'Услуги' ? 'workshop' : 'salon') + '.jpg" alt=""></div><div class="brief-text"><small>' + (done ? (state.owner || 'Заявка получена · демо') : 'Предпросмотр заявки') + '</small><h4>' + (answers[0] || 'Новая заявка') + '</h4><dl><dt>Сфера</dt><dd>' + (answers[1] || 'Ожидаем ответ') + '</dd><dt>Задача</dt><dd>' + (answers[2] || 'Ожидаем ответ') + '</dd></dl><div class="network-trace"></div>' + (done ? '<div class="buttons owner-actions">' + button('owner', 'В работу', 'В работе') + button('owner', 'Закрыть заявку', 'Закрыта') + '</div>' : '') + '</div></div>';
+  const fields = ['Неисправность', 'Район', 'Время'];
+  const receipt = '<div class="brief' + (done ? ' ready' : ' pending-brief') + '"><div class="brief-cover"><img src="assets/workshop.jpg" alt=""></div><div class="brief-text"><small>' +
+    (done ? (state.owner || 'Новая заявка · демо') : 'Черновик') + '</small><h4>' + (answers[0] || 'Заявка на ремонт') + '</h4><dl>' +
+    fields.map((label,i) => '<dt>' + label + '</dt><dd>' + (answers[i+1] || 'Ожидаем ответ') + '</dd>').join('') +
+    '</dl><div class="network-trace"></div>' + (done ? '<div class="buttons owner-actions">' + button('owner','Назначить мастера','Мастер назначен') + button('owner','Закрыть заявку','Закрыта') + '</div>' : '') + '</div></div>';
   const routes = questions[0][1].map((label,index) => button('route',label,index,'',label === answers[0])).join('');
-  return '<div class="bot inner"><div class="bot-shell"><header class="bot-console"><div><h3>Входящие<br>заявки</h3></div><div><p>Ответьте на вопросы в чате. Справа появится карточка, которую получает владелец.</p>' + (answers.length ? '<div class="choices" aria-label="Сменить сценарий">' + routes + '</div>' : '') + '</div></header><div class="desk"><section class="chat"><div class="chat-head"><i>V</i><div><h3>VicDev · Бриф</h3><small>Чат клиента · ' + answers.length + ' из 3 ответов</small></div></div><div class="messages" role="log" aria-label="История диалога">' + chat + (done ? '<div class="bubble">Готово! Вот как выглядит заявка для владельца.</div>' : '') + '</div><div class="keyboard">' + (done ? button('reset','Заполнить ещё раз') : currentOptions(answers.length).map((x,i)=>button('answer',x,i)).join('')) + (answers.length ? button('edit', 'Изменить последний ответ') : '') + '</div></section><aside><small>Со стороны бизнеса</small><h3>Карточка заявки</h3>' + receipt + '</aside></div></div></div>';
+  return '<div class="bot inner"><div class="bot-shell"><header class="bot-console"><div><h3>Выездной<br>ремонт</h3></div><div><p>Ответьте на вопросы в чате. В карточке появятся данные для владельца.</p>' + (answers.length ? '<div class="choices" aria-label="Сменить сценарий">' + routes + '</div>' : '') + '</div></header><div class="desk"><section class="chat"><div class="chat-head"><i>V</i><div><h3>Сервис «Мастер»</h3><small>Чат клиента · ' + answers.length + ' из 4 ответов</small></div></div><div class="messages" role="log" aria-label="История диалога">' + chat + (done ? '<div class="bubble">Готово! Вот как выглядит заявка для владельца.</div>' : '') + '</div><div class="keyboard">' + (done ? button('reset','Заполнить ещё раз') : currentOptions(answers.length).map((x,i)=>button('answer',x,i)).join('')) + (answers.length ? button('edit', 'Изменить последний ответ') : '') + '</div></section><aside><small>Со стороны бизнеса</small><h3>Карточка заявки</h3>' + receipt + '</aside></div></div></div>';
 }
 function render(action, value) {
   const oldScroll = stage.scrollTop;
-  if (current === 'salon') {
+  if (current === 'sport') {
     const panel = stage.querySelector('#booking');
     if (panel && action) {
       panel.innerHTML = booking();
       const focusTarget = [...panel.querySelectorAll('button')].find(b => b.dataset.action === action && b.dataset.value === value) || panel.querySelector('h3');
       focusTarget?.focus({preventScroll:true});
-      if (action === 'book-service' || action === 'book-master') scrollStudio('#studio-book');
+      if (['book-service','book-master','book-slot'].includes(action)) scrollStudio('#studio-book');
     } else {
       stage.innerHTML = studio();
       stage.scrollTop = 0;
@@ -247,25 +250,12 @@ stage.addEventListener('click', event => {
   if (!btn) return;
   const { action, value } = btn.dataset;
   const i = Number(value);
-  if (action === 'photo' || action === 'close-photo') {
-    const figure = stage.querySelector('.studio-photo');
-    if (action === 'close-photo') {
-      figure.hidden = true;
-      stage.querySelector('[data-action=photo][data-value="' + value + '"]').focus();
-      return;
-    }
-    const [label, photo, caption] = galleryPhotos[i];
-    figure.innerHTML = '<img src="assets/' + photo + '.jpg" alt="' + label + '"><figcaption><strong>' + label + '</strong><p>' + caption + '</p>' + button('close-photo','Скрыть фото',i) + '</figcaption>';
-    figure.hidden = false;
-    figure.querySelector('button').focus({preventScroll:true});
-    figure.scrollIntoView({block:'nearest'});
-    return;
-  }
   const productImage = action === 'add' && state.view !== 'cart' ? btn.closest('article')?.querySelector('img') : null;
   const outgoing = action === 'answer' && state.answers.length === questions.length - 1;
   const source = productImage || (outgoing ? btn : null);
   const origin = source?.getBoundingClientRect();
   switch (action) {
+    case 'book-slot': state.day = days[Math.floor(i / 3)]; state.time = slots[days.indexOf(state.day)][i % 3]; if (!availableSlots().includes(state.time)) { state.master = 0; state.service = masterServices[0].includes(state.service) ? state.service : 0; } state.step = 1; state.reschedule = false; break;
     case 'book-service': setService(i); state.step = 1; state.reschedule = false; break;
     case 'book-master': state.master = i; if (!masterServices[i].includes(state.service)) state.service = masterServices[i][0]; state.time = availableSlots()[0]; state.step = 1; state.reschedule = false; break;
     case 'service': setService(i); break;
@@ -302,3 +292,20 @@ stage.addEventListener('input', event => {
 });
 window.addEventListener('hashchange', syncUrl);
 syncUrl();
+
+document.querySelectorAll('[data-enquiry]').forEach(link => {
+  const draft = 'Здравствуйте! Хочу обсудить ' + link.dataset.enquiry + '. Мой бизнес: … Задача: …';
+  link.href = 'https://t.me/VicDevBy?text=' + encodeURIComponent(draft);
+});
+const scene = document.querySelector('.interface-scene');
+if (scene && matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)').matches) {
+  scene.addEventListener('pointermove', event => {
+    const rect = scene.getBoundingClientRect();
+    scene.style.setProperty('--rx', (10 - (event.clientY - rect.top) / rect.height * 20) + 'deg');
+    scene.style.setProperty('--ry', ((event.clientX - rect.left) / rect.width * 20 - 10) + 'deg');
+  });
+  scene.addEventListener('pointerleave', () => {
+    scene.style.removeProperty('--rx');
+    scene.style.removeProperty('--ry');
+  });
+}

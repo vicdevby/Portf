@@ -186,3 +186,38 @@
   .line-item { grid-template-columns: 50px 1fr auto; }
   .line-item img { height: 64px; }
 }
+
+/* Пульс */
+.sport { --tone:#c8f46e; --edge:#67716b; --hover:#323e36; --surface:#222b27; background:#141b17; color:#eff5e9; color-scheme:dark; }
+.sport .studio-nav { background:#151c18; }
+.sport .studio-brand { font:900 italic 2.1rem/1 "Segoe UI",sans-serif; color:#c8f46e; letter-spacing:-.06em; }
+.sport .studio-cta,.sport button.solid,.sport button[aria-pressed=true] { background:#c8f46e; color:#172011; border-radius:4px; }
+.sport .studio-cta:hover { background:#e5ffac; }
+.sport .studio-hero { align-items:stretch; }
+.sport .studio-feature-copy { align-self:center; }
+.sport .studio-hero h3,.sport .studio-section h3 { color:#f1f3ed; font:800 clamp(2.3rem,5vw,5rem)/.92 "Segoe UI",sans-serif; letter-spacing:-.058em; }
+.sport .studio-hero h3 { font-size:clamp(2.8rem,6vw,6rem); }
+.sport .studio-hero img { border-radius:2px; box-shadow:12px 12px 0 #36462e; height:100%; }
+.sport .studio-services article b { color:#d3f592; }
+.sport .studio-team article,.sport .artist,.sport #booking { background:#222b27; border-color:#67716b; }
+.sport .studio-team h4 { font-family:"Segoe UI",sans-serif; }
+.sport .ticket { background:#d7f4a5; border-color:#6b873f; color:#172011; }
+.sport .ticket strong { color:#223a19; }
+.sport .ticket-slot,.sport .progress .filled { border-color:#c8f46e; }
+.sport .progress span { border-bottom-color:#657460; }
+.timetable { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.timetable article { border:1px solid var(--edge); padding:14px; }
+.timetable h4 { margin-bottom:8px; }
+.timetable button { margin:0 6px 6px 0; }
+@media(max-width:500px) {.timetable {grid-template-columns:1fr}.sport .studio-hero img {height:auto}}
+
+.bot { --tone:#283f88; --edge:#8998b8; --hover:#dae4ff; --surface:#e9eeff; background:#e1e8f8; color:#1c2a47; }
+.bot .chat { background:#f5f7ff; }
+.bot .chat-head,.bot .brief { background:#1c2b50; }
+.bot .chat-head i { background:#bfd0ff; color:#243c82; }
+.bot .bubble { background:#e3eaff; }
+.bot .bubble.mine { background:#c7d7fa; }
+.bot .network-trace { background:#95b1ff; }
+.bot .ready { border-color:#4c65ad; box-shadow:5px 5px 0 #a1b1dc; }
+.bot .brief-text dt { color:#d0daf1; }
+.bot .owner-actions button { color:#1d315d; background:#e6edff; }
