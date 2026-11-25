@@ -74,3 +74,44 @@
   .hero-case { min-height: clamp(320px, 85vw, 430px); padding: 18px; }
   .art { aspect-ratio: 1.65; }
 }
+
+/* Portfolio overview and case index */
+.intro { grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr); }
+.intro h1 { font-size: clamp(3.5rem, 6.7vw, 6.8rem); max-width: 9ch; }
+.intro h1 em { display: block; margin-top: .06em; }
+.intro .lead { margin-top: 24px; }
+.hero-case { min-height: clamp(360px, 43vw, 565px); }
+.hero-top { padding-right: 18%; }
+.hero-name { margin-bottom: 8px; }
+#works h2 { max-width: 17ch; margin-bottom: 28px; }
+.cases { grid-template-columns: 1fr; gap: 0; border-top: 1px solid var(--rule); }
+.case { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); align-items: center; gap: clamp(24px, 7vw, 110px); padding-block: 18px; border-bottom: 1px solid var(--rule); }
+.case:nth-child(even) .art { order: 2; }
+.case .art { aspect-ratio: 2.05; margin: 0; }
+.case .art img { object-position: 50% 55%; }
+.case-text { display: grid; align-content: center; gap: 9px; }
+.case-text strong { font-size: clamp(1.9rem, 4.5vw, 3.9rem); color: #f3f2e9; letter-spacing: -.06em; line-height: 1; }
+.case-text > span { max-width: 38ch; line-height: 1.55; }
+.case-text > b { width: fit-content; margin-top: 6px; color: #f3f2e9; border-bottom: 1px solid var(--lime); }
+.case:hover .case-text > b { color: var(--lime); }
+.demo-note { margin-top: 14px; color: var(--muted); }
+.info-section { display: grid; grid-template-columns: minmax(0, .65fr) minmax(0, 1.35fr); gap: clamp(22px, 7vw, 100px); }
+.prices, .steps { display: block; margin: 0; border-top: 1px solid var(--rule); }
+.prices article, .steps li { padding: 18px 0; border: 0; border-bottom: 1px solid var(--rule); background: transparent; }
+.prices article { display: flex; gap: 12px; align-items: center; justify-content: space-between; }
+.prices p, .steps p { margin-top: 6px; }
+.prices strong { margin: 0; white-space: nowrap; font: 620 clamp(1.32rem, 3.4vw, 2.6rem)/1 "Segoe UI",sans-serif; letter-spacing: -.05em; }
+.steps li { padding-left: 3px; }
+.steps h3::after { content: none; }
+.enquiry { display: flex; align-items: center; justify-content: space-between; gap: 20px; background: var(--lime); color: #18230c; border-color: transparent; }
+.enquiry p { margin-bottom: 0; }
+.enquiry .primary { background: #192213; color: #f3f2e9; white-space: nowrap; }
+@media (max-width: 640px) {
+  .intro { grid-template-columns: 1fr; }
+  .intro h1 { font-size: clamp(3rem, 10vw, 4.4rem); }
+  .hero-case { min-height: 335px; }
+  .case, .info-section { grid-template-columns: 1fr; }
+  .case { gap: 16px; padding-block: 20px; }
+  .case:nth-child(even) .art { order: -1; }
+  .enquiry { align-items: start; flex-direction: column; }
+}

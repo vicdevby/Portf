@@ -1,27 +1,84 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Сайты и Telegram-боты для записи и заказов. Три интерактивных проекта VicDevBy с демонстрацией работы.">
-<title>VicDevBy — сайты и Telegram-боты</title>
-<link rel="stylesheet" href="portfolio.css"><link rel="stylesheet" href="demos.css">
-<script defer src="portfolio.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Сайты и Telegram-боты от VicDevBy. Попробуйте онлайн-запись, заказ в магазине и приём заявок в интерактивных демо.">
+  <title>VicDevBy — сайты и Telegram-боты</title>
+  <link rel="stylesheet" href="portfolio.css">
+  <link rel="stylesheet" href="demos.css">
+  <script defer src="portfolio.js"></script>
 </head>
 <body>
-<header class="mast"><div class="wrap"><a class="logo" href="#top"><i>V</i>VicDevBy</a><nav aria-label="Навигация"><a href="#works">Работы</a><a href="#price">Стоимость</a><a href="#process">Процесс</a></nav><a class="contact" href="https://t.me/VicDevBy">Написать в Telegram</a></div></header>
-<main id="top" class="wrap">
-<section class="intro"><div><p class="kicker">Портфолио разработчика</p><h1>Сайты и боты для <em>заявок</em> и заказов</h1><p class="lead">Клиент выбирает услугу, время или товар. Вы получаете детали заявки в Telegram.</p><div class="actions"><a class="primary" href="https://t.me/VicDevBy">Обсудить проект</a><a href="#works">Смотреть работы</a></div><p class="rates">Сайт от $80 <span>·</span> Telegram-бот от $50</p></div>
-<button class="hero-case" data-demo="salon"><img src="assets/salon.jpg" alt="" fetchpriority="high"><span class="hero-top">Студия маникюра <b>Демо</b></span><span class="hero-name">Лето<span>Студия красоты</span></span><span class="hero-foot">Попробовать онлайн-запись <b aria-hidden="true">▷</b></span></button>
-</section>
-<section class="block" id="works"><h2>Избранные работы</h2><p class="desc">Пройдите три сценария с примерными данными. Все действия происходят здесь, в браузере.</p>
-<div class="cases">
-<button class="case" data-demo="salon"><span class="art art-salon"><img src="assets/salon.jpg" alt="" loading="lazy"><i>Лето</i></span><small>Онлайн-запись</small><strong>Студия «Лето»</strong><span>Выберите услугу и время визита.</span></button>
-<button class="case" data-demo="shop"><span class="art art-shop"><img src="assets/vase.jpg" alt="" loading="lazy"><i>Тихий дом</i></span><small>Интернет-магазин</small><strong>Предметы для дома</strong><span>Соберите корзину и оформите заказ.</span></button>
-<button class="case" data-demo="bot"><span class="art art-bot"><span class="packet"><b>Заявка</b><span>Сайт для бизнеса</span><i></i></span></span><small>Telegram-бот</small><strong>Приём заявок</strong><span>Отправьте бриф и откройте карточку владельца.</span></button>
-</div></section>
-<section class="block" id="price"><h2>Стоимость проекта</h2><p class="desc">Ориентиры из моих тарифов. Итоговую цену назову после обсуждения задачи.</p><div class="prices"><article><h3>Одностраничник</h3><strong>от $80</strong><p>Услуги, цены, фотографии и кнопка записи.</p></article><article><h3>Сайт с анимацией</h3><strong>от $110</strong><p>Одностраничник с 3D-сценой и плавными эффектами.</p></article><article><h3>Telegram-бот</h3><strong>от $50</strong><p>Запись, каталог или расчёт с уведомлением о заявке.</p></article><article><h3>Сайт и бот</h3><strong>от $120</strong><p>Сайт и сценарий записи или заказа в едином стиле.</p></article></div></section>
-<section class="block" id="process"><h2>Как проходит работа</h2><ol class="steps"><li><h3>Задача</h3>Обсудим ваш бизнес в Telegram. Пришлите услуги, цены и фотографии.</li><li><h3>Макет</h3>За 2–3 дня покажу первый бесплатный макет под вашу задачу.</li><li><h3>Правки</h3>Пройдём путь клиента вместе и уточним тексты, экраны и действия.</li><li><h3>Запуск</h3>После согласования и оплаты опубликую проект и покажу, как обновлять цены.</li></ol></section>
-<section class="enquiry"><h2>Что должен уметь ваш сайт или бот?</h2><p>Расскажите, как сейчас принимаете заявки и что хотите упростить.</p><a class="primary" href="https://t.me/VicDevBy">Написать @VicDevBy</a></section>
-</main><footer class="wrap">VicDevBy · Сайты и Telegram-боты</footer>
-<dialog id="demo" aria-labelledby="demo-title"><header class="demo-bar"><div><small>Интерактивное демо</small><h2 id="demo-title"></h2></div><button class="close" type="button">Закрыть <span aria-hidden="true">×</span></button></header><div id="stage"></div></dialog>
-</body></html>
+  <header class="mast">
+    <div class="wrap">
+      <a class="logo" href="#top"><i aria-hidden="true">V</i>VicDevBy</a>
+      <nav aria-label="Навигация"><a href="#works">Работы</a><a href="#price">Стоимость</a><a href="#process">Процесс</a></nav>
+      <a class="contact" href="https://t.me/VicDevBy">Telegram</a>
+    </div>
+  </header>
+  <main id="top" class="wrap">
+    <section class="intro">
+      <div>
+        <h1>Сайты и боты, которые <em>принимают заявки</em></h1>
+        <p class="lead">Клиент записывается на услугу или оформляет заказ. Детали приходят вам в Telegram.</p>
+        <div class="actions">
+          <a class="primary" href="https://t.me/VicDevBy">Обсудить проект</a>
+          <a href="#works">Смотреть работы</a>
+        </div>
+      </div>
+      <button class="hero-case" data-demo="salon" aria-label="Открыть демо сайта студии Лето">
+        <img src="assets/salon.jpg" alt="" fetchpriority="high">
+        <span class="hero-top">Сайт студии красоты</span>
+        <span class="hero-name">Лето</span>
+        <span class="hero-foot">Открыть сайт студии <b aria-hidden="true">▷</b></span>
+      </button>
+    </section>
+    <section class="block" id="works">
+      <h2>Работы, которые можно попробовать</h2>
+      <div class="cases">
+        <button class="case" data-demo="salon">
+          <span class="art art-salon"><img src="assets/salon.jpg" alt="" loading="lazy"></span>
+          <span class="case-text"><small>Сайт студии</small><strong>Студия «Лето»</strong><span>Посмотрите работы мастеров, выберите услугу и запишитесь на удобное время.</span><b>Открыть сайт</b></span>
+        </button>
+        <button class="case" data-demo="shop">
+          <span class="art art-shop"><img src="assets/interior.jpg" alt="" loading="lazy"></span>
+          <span class="case-text"><small>Интернет-магазин</small><strong>Тихий дом</strong><span>Откройте коллекцию, соберите корзину и пройдите оформление заказа.</span><b>Открыть магазин</b></span>
+        </button>
+        <button class="case" data-demo="bot">
+          <span class="art art-bot"><span class="packet"><b>Новая заявка</b><span>Сайт для бизнеса</span><i></i></span></span>
+          <span class="case-text"><small>Бот для бизнеса</small><strong>Заявки из Telegram</strong><span>Пройдите диалог со стороны клиента и обработайте заявку со стороны владельца.</span><b>Попробовать бота</b></span>
+        </button>
+      </div>
+      <p class="demo-note">Данные и действия в работах демонстрационные.</p>
+    </section>
+    <section class="block info-section" id="price">
+      <div><h2>Стоимость проекта</h2><p class="desc">Итоговую цену назову после обсуждения задачи.</p></div>
+      <div class="prices">
+        <article><div><h3>Одностраничник</h3><p>Услуги, цены, фотографии и запись.</p></div><strong>от $80</strong></article>
+        <article><div><h3>Сайт с анимацией</h3><p>Одностраничник с 3D-сценой и плавными эффектами.</p></div><strong>от $110</strong></article>
+        <article><div><h3>Telegram-бот</h3><p>Запись, каталог или расчёт с уведомлением.</p></div><strong>от $50</strong></article>
+        <article><div><h3>Сайт и бот</h3><p>Сайт и сценарий записи или заказа в едином стиле.</p></div><strong>от $120</strong></article>
+      </div>
+    </section>
+    <section class="block info-section" id="process">
+      <h2>Как проходит работа</h2>
+      <ol class="steps">
+        <li><h3>Обсуждаем задачу</h3><p>Вы присылаете список услуг, цены и фотографии. Вместе решаем, что должен уметь сайт или бот.</p></li>
+        <li><h3>Смотрите макет</h3><p>За 2–3 дня покажу первый бесплатный макет под вашу задачу.</p></li>
+        <li><h3>Проверяем сценарий</h3><p>Проходим путь клиента и уточняем тексты, экраны и действия.</p></li>
+        <li><h3>Запускаем проект</h3><p>После согласования и оплаты опубликую проект и покажу, как обновлять цены.</p></li>
+      </ol>
+    </section>
+    <section class="enquiry">
+      <div><h2>Обсудим ваш проект?</h2><p>Расскажите, как сейчас принимаете заявки и что хотите упростить.</p></div>
+      <a class="primary" href="https://t.me/VicDevBy">Написать @VicDevBy</a>
+    </section>
+  </main>
+  <footer class="wrap portfolio-footer">VicDevBy · Сайты и Telegram-боты</footer>
+  <dialog id="demo" aria-labelledby="demo-title">
+    <header class="demo-bar"><div><small>Интерактивное демо</small><h2 id="demo-title"></h2></div><button class="close" type="button">В портфолио <span aria-hidden="true">×</span></button></header>
+    <div id="stage"></div>
+  </dialog>
+</body>
+</html>
